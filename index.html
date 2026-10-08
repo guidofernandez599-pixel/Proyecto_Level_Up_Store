@@ -17,6 +17,7 @@
                     <li><a href="#Horarios">Los Horarios</a> </li>
                     <li><a href="#Contactos">Contactanos</a> </li>
                     <li><a href="#Promociones"> las mejores Promociones y ofertas </a> </li>
+                    <li><a href="#Pedidos"> Realiza tu pedido desde aqui</a> </li>
                     
                 </ul>
             </nav>
@@ -97,9 +98,115 @@
                     <h3>Solo Viernes y Sabados</h3>
                     <p>Desde las 17:00 pm hasta las 21:00 pm</p>
                 </article>
+
+                <table>
+                    <caption>Precios por productos y disponibilidad</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Productos</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Disponible</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Boligrafos</td> <td>Bs. 1.50</td> <td>todos los dias</td></tr>
+                        <tr><td>Lapiz 2B</td> <td>Bs. 1.00</td> <td>todos los dias</td></tr>
+                        <tr><td>Docena de Colores</td> <td>Bs. 18.00</td> <td>todos los dias</td></tr>
+                    </tbody>
+                </table>
+
+                <figure>
+                    <img src="materiales.jfif"
+                    alt="materiales escolares a tu eleccion"
+                    width="600" height="400">
+                    <figcaption>los mejores materiales de colquencha</figcaption>
+                </figure>
+
+            </section>
+
+            <section id="Pedidos">
+                <h2>Hacer un pedido</h2>
+
+                <form action="/Pedidos" method="post">
+
+                <fieldset>
+                    <legend>Tus datos</legend>
+
+                    <p>
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre"
+                            autocomplete="name" required>
+                    </p>
+
+                    <p>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email"
+                            autocomplete="email" required>
+                    </p>
+
+                    <p>
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono"
+                            autocomplete="tel" pattern="[0-9]{7,8}"
+                            title="7 u 8 dígitos, sin espacios">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tu pedido</legend>
+
+                    <p>
+                    <label for="Productos">Productos</label>
+                    <select id="Productos" name="Productos" required>
+                        <option value="">Elige uno</option>
+                        <option value="Escolares">Boligrafos Escolares</option>
+                        <option value="Peluches">Osos de Peluche</option>
+                        <option value="fotos">Portafotos</option>
+                        <option value="Marcadores">Marcadadores Fosforecentes</option>
+                        <option value="Hojas">Hojas Bond</option>
+                    </select>
+                    </p>
+
+                    <p>
+                    <label for="cantidad">Cantidad</label>
+                    <input type="number" id="cantidad" name="cantidad"
+                            min="1" max="100" value="1" required>
+                    </p>
+
+                    <p>
+                    <label for="fecha">Fecha de entrega</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                    </p>
+
+                    <p>
+                    <label for="notas">Alguna indicación</label>
+                    <textarea id="notas" name="notas" rows="3"></textarea>
+                    </p>
+
+                    <p>
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos">Acepto que el pedido se confirma por teléfono</label>
+                    </p>
+                </fieldset>
+                <button type="submit">Enviar pedido</button>
+                </form>
             </section>
 
         </main>
+
+        <aside>
+            <h2>¿Sabías?</h2>
+            <p>Jugar juegos en el las PCs, ayuda a que mejores tu dactilografia?</p>
+        </aside>
+
+        <footer id="Contactos">
+            <h2>Contactanos</h2>
+            <address>
+                Colquencha cerca de la plaza principal<br>
+                Teléfono: 740 903 98
+            </address>
+            <p><small>&copy; 2026 Level Up Store</small></p>
+        </footer>
 
     </body>
 </html>
