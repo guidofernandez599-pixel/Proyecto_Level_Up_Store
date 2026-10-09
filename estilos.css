@@ -1,0 +1,519 @@
+/* ── 1. RESET Y FUENTES ────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── 2. PALETA Y VARIABLES TECNOLÓGICAS (DARK NEON / CYBER) ─────────────── */
+:root {
+  /* Colores de Marca Tecnológica */
+  --color-fondo-base:     #080b11; 
+  --color-superficie:     #0f172a; 
+  --color-superficie-glass: rgba(15, 23, 42, 0.75);
+  --color-tarjeta:        rgba(30, 41, 59, 0.6);
+  
+  /* Luces y Neón */
+  --neon-cyan:            #00f2fe;
+  --neon-purple:          #7928ca;
+  --neon-pink:            #ff0080;
+  --color-texto:          #f1f5f9;
+  --color-texto-suave:    #94a3b8;
+  --borde-tech:           rgba(255, 255, 255, 0.1);
+  --borde-neon:           rgba(0, 242, 254, 0.4);
+
+  /* Dimensiones */
+  --radio-sm: 8px;
+  --radio-md: 16px;
+  --radio-lg: 24px;
+  
+  /* Sombras y Efectos Glow */
+  --glow-cyan: 0 0 20px rgba(0, 242, 254, 0.35);
+  --glow-purple: 0 0 25px rgba(121, 40, 202, 0.4);
+  --sombra-card: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+  --transicion: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-texto);
+  
+  /* Fondo Tecnológico con Patrón Cyber Grid y Gradiente */
+  background-color: var(--color-fondo-base);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(121, 40, 202, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 85% 60%, rgba(0, 242, 254, 0.15) 0%, transparent 40%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ── 3. HEADER TECNOLÓGICO Y NAVEGACIÓN ───────────────────────────────── */
+header {
+  background: var(--color-superficie-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--borde-tech);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.brand h1 {
+  font-size: 1.9rem;
+  background: linear-gradient(135deg, #ffffff 0%, var(--neon-cyan) 100%);
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.brand h1 span {
+  background: linear-gradient(135deg, var(--neon-purple) 0%, var(--neon-pink) 100%);
+  -webkit-text-fill-color: transparent;
+}
+
+.brand p {
+  font-size: 0.82rem;
+  color: var(--color-texto-suave);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-texto);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transicion);
+}
+
+nav a:hover {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+}
+
+.btn-nav {
+  background: linear-gradient(135deg, var(--neon-purple) 0%, var(--neon-cyan) 100%);
+  color: #ffffff !important;
+  padding: 0.55rem 1.3rem;
+  border-radius: var(--radio-sm);
+  box-shadow: var(--glow-purple);
+  transition: var(--transicion);
+}
+
+.btn-nav:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--glow-cyan);
+}
+
+/* ── 4. ESTRUCTURA Y SECCIONES ─────────────────────────────────────────── */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.section-block {
+  scroll-margin-top: 100px;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+}
+
+.section-header h2 {
+  font-size: 2.3rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #ffffff 30%, var(--neon-cyan) 100%);
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+.section-header h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+  box-shadow: var(--glow-cyan);
+}
+
+.section-header p {
+  color: var(--color-texto-suave);
+  margin-top: 0.6rem;
+}
+
+/* ── 5. GRID DE TARJETAS TECNOLÓGICAS (GLASSMORPHISM + GLOW) ──────────── */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--color-tarjeta);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--borde-tech);
+  border-radius: var(--radio-md);
+  padding: 1.8rem;
+  box-shadow: var(--sombra-card);
+  transition: var(--transicion);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  opacity: 0;
+  transition: var(--transicion);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--borde-neon);
+  box-shadow: var(--glow-cyan);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card-icon {
+  font-size: 2.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--color-texto-suave);
+  font-size: 0.95rem;
+}
+
+/* Promociones Cyber */
+.promo-card {
+  background: rgba(121, 40, 202, 0.15);
+  border: 1px solid rgba(121, 40, 202, 0.4);
+}
+
+.promo-card:hover {
+  box-shadow: var(--glow-purple);
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
+  text-transform: uppercase;
+}
+
+/* ── 6. TABLA Y HORARIOS CYBER ─────────────────────────────────────────── */
+.schedule-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.schedule-card {
+  text-align: center;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9));
+  border: 1px solid var(--borde-tech);
+}
+
+.schedule-card .time {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+  margin-top: 0.5rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-radius: var(--radio-md);
+  border: 1px solid var(--borde-tech);
+  box-shadow: var(--sombra-card);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(15, 23, 42, 0.8);
+  text-align: left;
+}
+
+caption {
+  font-weight: 700;
+  padding: 1rem 1.2rem;
+  color: var(--color-texto);
+  background: rgba(30, 41, 59, 0.8);
+  border-bottom: 1px solid var(--borde-tech);
+  text-align: left;
+}
+
+th, td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--borde-tech);
+}
+
+th {
+  background: rgba(2, 6, 23, 0.8);
+  color: var(--neon-cyan);
+  font-weight: 600;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--neon-cyan);
+}
+
+.status.available {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.featured-image {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.featured-image img {
+  width: 100%;
+  max-width: 800px;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: var(--radio-md);
+  border: 1px solid var(--borde-tech);
+  box-shadow: var(--sombra-card);
+}
+
+.featured-image figcaption {
+  margin-top: 0.6rem;
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ── 7. FORMULARIO CYBER DE PEDIDOS ────────────────────────────────────── */
+.order-section {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 2.5rem;
+  border-radius: var(--radio-lg);
+  border: 1px solid var(--borde-tech);
+  box-shadow: var(--sombra-card);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+fieldset {
+  border: 1px solid var(--borde-tech);
+  padding: 1.5rem;
+  border-radius: var(--radio-md);
+  background: rgba(30, 41, 59, 0.3);
+}
+
+legend {
+  font-weight: 700;
+  color: var(--neon-cyan);
+  padding: 0 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--color-texto);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--borde-tech);
+  border-radius: var(--radio-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: rgba(2, 6, 23, 0.6);
+  color: #ffffff;
+  transition: var(--transicion);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--neon-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+select option {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1.5rem 0;
+}
+
+.checkbox-group input {
+  width: auto;
+  accent-color: var(--neon-purple);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--neon-purple) 0%, var(--neon-cyan) 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radio-sm);
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--glow-purple);
+  transition: var(--transicion);
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-cyan);
+}
+
+/* ── 8. TIP Y FOOTER ───────────────────────────────────────────────────── */
+.did-you-know {
+  background: rgba(0, 242, 254, 0.08);
+  border-left: 4px solid var(--neon-cyan);
+  padding: 1.5rem;
+  border-radius: var(--radio-sm);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  box-shadow: var(--glow-cyan);
+}
+
+.aside-icon {
+  font-size: 2rem;
+}
+
+footer {
+  background: #020617;
+  border-top: 1px solid var(--borde-tech);
+  color: var(--color-texto-suave);
+  padding: 3rem 1.5rem 1.5rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-info h2 {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.footer-info address {
+  font-style: normal;
+  line-height: 1.8;
+}
+
+.footer-info strong {
+  color: var(--neon-cyan);
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--borde-tech);
+  font-size: 0.85rem;
+}
+
+/* ── RESPONSIVO ────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  nav ul {
+    justify-content: center;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+}

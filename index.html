@@ -1,212 +1,279 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scarle=1.0">
-        <meta name="description" content="Libreria, internet y tambien tienda de regalos en colquencha.">
-        <title> Level Up Store </title>
-    </head>
-    <body>
-        <header>
-            <h1> Level Up Store </h1>
-            <p>Libreria, internet y tambien tienda de regalos en colquencha.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Librería, internet y tienda de regalos en Colquencha.">
+    <title>Level Up Store</title>
+    <!-- Fuente moderna Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="brand">
+                <h1>Level Up <span>Store</span></h1>
+                <p>Librería, internet y tienda de regalos en Colquencha</p>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#Productos">Aqui Todos los Productos Escolares</a> </li>
-                    <li><a href="#Regalos">Mira Nuestros Regalos</a> </li>
-                    <li><a href="#Horarios">Los Horarios</a> </li>
-                    <li><a href="#Contactos">Contactanos</a> </li>
-                    <li><a href="#Promociones"> las mejores Promociones y ofertas </a> </li>
-                    <li><a href="#Pedidos"> Realiza tu pedido desde aqui</a> </li>
-                    
+                    <li><a href="#Productos">Productos Escolares</a></li>
+                    <li><a href="#Regalos">Regalos</a></li>
+                    <li><a href="#Promociones">Promociones</a></li>
+                    <li><a href="#Horarios">Horarios</a></li>
+                    <li><a href="#Pedidos" class="btn-nav">Hacer Pedido</a></li>
                 </ul>
             </nav>
-        </header>
-        <main>
-            <section id="Productos">
-                <h2>Aqui Todos los Productos Escolares</h2>
-                <article>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <!-- Sección de Productos Escolares -->
+        <section id="Productos" class="section-block">
+            <div class="section-header">
+                <h2>Productos Escolares</h2>
+                <p>Todo el material necesario para tu año escolar con la mejor calidad.</p>
+            </div>
+            <div class="grid-cards">
+                <article class="card">
+                    <div class="card-icon">✏️</div>
                     <h3>Colores</h3>
-                    <p>Colores de todas las marcas, fabelcastel, nataraj, sabonis, etc.</p>
+                    <p>Colores de todas las marcas reconocidas: Faber-Castell, Nataraj, Sabonis y más.</p>
                 </article>
 
-                <article>
-                    <h3>Boligrafos</h3>
-                    <p>Aqui los mejores boligrafos, de diferentes colores y marcas</p>
+                <article class="card">
+                    <div class="card-icon">🖊️</div>
+                    <h3>Bolígrafos</h3>
+                    <p>Los mejores bolígrafos de diferentes colores, gel y marcas de larga duración.</p>
                 </article>
 
-                <article>
-                    <h3>Hojas</h3>
-                    <p>Tenemos hojas bond, hojas de colores, hojas traper, etc.</p>
+                <article class="card">
+                    <div class="card-icon">📄</div>
+                    <h3>Hojas y Papelería</h3>
+                    <p>Contamos con hojas bond, hojas de colores, repuestos Trapper y cartulinas.</p>
                 </article>
 
-                <article>
+                <article class="card">
+                    <div class="card-icon">🖍️</div>
                     <h3>Marcadores</h3>
-                    <p>Todos los marcadores que necesitaras</p>
+                    <p>Marcadores permanentes, para pizarra y resaltadores fosforescentes.</p>
                 </article>
 
-                <article>
-                    <h3>Cuadernos y demas</h3>
-                    <p>cuardenos de todo tamaño, como tambien anillados, y archivadores</p>
+                <article class="card">
+                    <div class="card-icon">📓</div>
+                    <h3>Cuadernos y Archivadores</h3>
+                    <p>Cuadernos de todo tamaño, anillados, carpetas y archivadores de gran resistencia.</p>
                 </article>
-            </section>
+            </div>
+        </section>
 
-            <section id="Regalos">
-                <h2>En esta seccion puedes ver todos nuestros regalos disponibles</h2>
-                <article>
-                    <h3>Osos de peluche</h3>
-                    <p>Osos de peluche de todo tamaño y formas</p>
+        <!-- Sección de Regalos -->
+        <section id="Regalos" class="section-block">
+            <div class="section-header">
+                <h2>Tienda de Regalos</h2>
+                <p>Encuentra el detalle perfecto para esa persona especial.</p>
+            </div>
+            <div class="grid-cards">
+                <article class="card highlight-card">
+                    <div class="card-icon">🧸</div>
+                    <h3>Osos de Peluche</h3>
+                    <p>Osos de peluche suaves y acojinados de todos los tamaños y colores.</p>
                 </article>
 
-                <article>
+                <article class="card highlight-card">
+                    <div class="card-icon">⌚</div>
                     <h3>Relojes</h3>
-                    <p>relojes con las mejores formas y y tamaños para decoraciones y de uso personal</p>
+                    <p>Relojes con diseños elegantes y modernos para decoración o uso personal.</p>
                 </article>
 
-                <article>
+                <article class="card highlight-card">
+                    <div class="card-icon">🖼️</div>
                     <h3>Portafotos</h3>
-                    <p>para que guardes tus recuerdos en un marco bonito tenemos portafotos disponibles a tu eleccion</p>
-                </article>
-                
-                <article>
-                    <h3>Collares y manillas</h3>
-                    <p>Collares y manillas para compartir con esa persona especial, y tambien con las iniciales que mas te gusten </p>
-                </article>
-            </section>
-
-            <section id="Promociones">
-                <h2>Las mejores Ofertas y Promociones de Level Up</h2>
-                <article>
-                    <h3>Viernes 2x1 en las maquinas</h3>
-                    <p>ven a jugar los mejores juegos del lugar, con tu amigo los viernes pagan de una maquina y juegan 2 </p>
+                    <p>Guarda tus mejores recuerdos en marcos bonitos y acabados de calidad.</p>
                 </article>
 
-                <article>
-                    <h3>Promo cumpleaños</h3>
-                    <p>Si es tu cumpleaños, ven tu carnet y podras jugar gratis todo el dia.</p>
+                <article class="card highlight-card">
+                    <div class="card-icon">📿</div>
+                    <h3>Collares y Manillas</h3>
+                    <p>Collares y manillas para compartir, personalizables con las iniciales que prefieras.</p>
                 </article>
-            </section>
+            </div>
+        </section>
 
-            <section id="Horarios">
-                <h2>Level Up Store estará habierta para atenderte desdelos siguiente horarios</h2>
-                <article>
-                    <h3>De Domingos a Jueves</h3>
-                    <p>Desde las 14:00 pm hasta las 22:00</p>
+        <!-- Promociones -->
+        <section id="Promociones" class="section-block promo-section">
+            <div class="section-header">
+                <h2>Ofertas y Promociones</h2>
+                <p>¡Aprovecha nuestros días especiales en Level Up!</p>
+            </div>
+            <div class="grid-cards">
+                <article class="card promo-card">
+                    <span class="badge">Especial Cyber</span>
+                    <h3>Viernes 2x1 en Máquinas</h3>
+                    <p>Ven a disfrutar los mejores juegos con un amigo: los viernes pagan una sola máquina y juegan dos.</p>
                 </article>
 
-                <article>
-                    <h3>Solo Viernes y Sabados</h3>
-                    <p>Desde las 17:00 pm hasta las 21:00 pm</p>
+                <article class="card promo-card">
+                    <span class="badge">Exclusivo</span>
+                    <h3>Promo Cumpleaños</h3>
+                    <p>Si es el día de tu cumpleaños, presenta tu carnet de identidad ¡y podrás jugar gratis todo el día!</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Horarios y Precios -->
+        <section id="Horarios" class="section-block">
+            <div class="section-header">
+                <h2>Horarios de Atención</h2>
+            </div>
+            
+            <div class="schedule-container">
+                <article class="card schedule-card">
+                    <h3>Domingos a Jueves</h3>
+                    <p class="time">14:00 PM – 22:00 PM</p>
                 </article>
 
+                <article class="card schedule-card">
+                    <h3>Viernes y Sábados</h3>
+                    <p class="time">17:00 PM – 21:00 PM</p>
+                </article>
+            </div>
+
+            <div class="table-wrapper">
                 <table>
-                    <caption>Precios por productos y disponibilidad</caption>
+                    <caption>Lista de Precios y Disponibilidad</caption>
                     <thead>
                         <tr>
-                            <th scope="col">Productos</th>
+                            <th scope="col">Producto</th>
                             <th scope="col">Precio</th>
-                            <th scope="col">Disponible</th>
+                            <th scope="col">Disponibilidad</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Boligrafos</td> <td>Bs. 1.50</td> <td>todos los dias</td></tr>
-                        <tr><td>Lapiz 2B</td> <td>Bs. 1.00</td> <td>todos los dias</td></tr>
-                        <tr><td>Docena de Colores</td> <td>Bs. 18.00</td> <td>todos los dias</td></tr>
+                        <tr>
+                            <td>Bolígrafos (unidad)</td>
+                            <td><span class="price">Bs. 1.50</span></td>
+                            <td><span class="status available">Todos los días</span></td>
+                        </tr>
+                        <tr>
+                            <td>Lápiz 2B</td>
+                            <td><span class="price">Bs. 1.00</span></td>
+                            <td><span class="status available">Todos los días</span></td>
+                        </tr>
+                        <tr>
+                            <td>Docena de Colores</td>
+                            <td><span class="price">Bs. 18.00</span></td>
+                            <td><span class="status available">Todos los días</span></td>
+                        </tr>
                     </tbody>
                 </table>
+            </div>
 
-                <figure>
-                    <img src="materiales.jfif"
-                    alt="materiales escolares a tu eleccion"
-                    width="600" height="400">
-                    <figcaption>los mejores materiales de colquencha</figcaption>
-                </figure>
+            <figure class="featured-image">
+                <img src="materiales.jfif" alt="Materiales escolares disponibles en Level Up Store">
+                <figcaption>Los mejores materiales y suministros de Colquencha</figcaption>
+            </figure>
+        </section>
 
-            </section>
+        <!-- Formulario de Pedidos -->
+        <section id="Pedidos" class="section-block order-section">
+            <div class="section-header">
+                <h2>Realiza tu Pedido</h2>
+                <p>Llena el formulario y coordinaremos la entrega de tus productos.</p>
+            </div>
 
-            <section id="Pedidos">
-                <h2>Hacer un pedido</h2>
+            <form action="/Pedidos" method="post" class="order-form">
+                <div class="form-grid">
+                    <fieldset>
+                        <legend>Tus Datos Personales</legend>
 
-                <form action="/Pedidos" method="post">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" autocomplete="name" required>
+                        </div>
 
-                <fieldset>
-                    <legend>Tus datos</legend>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" autocomplete="email" required>
+                        </div>
 
-                    <p>
-                    <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre"
-                            autocomplete="name" required>
-                    </p>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono / WhatsApp</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Ej. 74090398" autocomplete="tel" pattern="[0-9]{7,8}" title="7 u 8 dígitos, sin espacios">
+                        </div>
+                    </fieldset>
 
-                    <p>
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email"
-                            autocomplete="email" required>
-                    </p>
+                    <fieldset>
+                        <legend>Detalles del Pedido</legend>
 
-                    <p>
-                    <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" name="telefono"
-                            autocomplete="tel" pattern="[0-9]{7,8}"
-                            title="7 u 8 dígitos, sin espacios">
-                    </p>
-                </fieldset>
+                        <div class="form-group">
+                            <label for="Productos">Producto de Interés</label>
+                            <select id="Productos" name="Productos" required>
+                                <option value="" disabled selected>Elige una opción...</option>
+                                <option value="Escolares">Bolígrafos Escolares</option>
+                                <option value="Peluches">Osos de Peluche</option>
+                                <option value="fotos">Portafotos</option>
+                                <option value="Marcadores">Marcadores Fosforecentes</option>
+                                <option value="Hojas">Hojas Bond</option>
+                            </select>
+                        </div>
 
-                <fieldset>
-                    <legend>Tu pedido</legend>
+                        <div class="form-group">
+                            <label for="cantidad">Cantidad</label>
+                            <input type="number" id="cantidad" name="cantidad" min="1" max="100" value="1" required>
+                        </div>
 
-                    <p>
-                    <label for="Productos">Productos</label>
-                    <select id="Productos" name="Productos" required>
-                        <option value="">Elige uno</option>
-                        <option value="Escolares">Boligrafos Escolares</option>
-                        <option value="Peluches">Osos de Peluche</option>
-                        <option value="fotos">Portafotos</option>
-                        <option value="Marcadores">Marcadadores Fosforecentes</option>
-                        <option value="Hojas">Hojas Bond</option>
-                    </select>
-                    </p>
+                        <div class="form-group">
+                            <label for="fecha">Fecha requerida de entrega</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
 
-                    <p>
-                    <label for="cantidad">Cantidad</label>
-                    <input type="number" id="cantidad" name="cantidad"
-                            min="1" max="100" value="1" required>
-                    </p>
+                        <div class="form-group">
+                            <label for="notas">Indicaciones o detalles adicionales</label>
+                            <textarea id="notas" name="notas" rows="3" placeholder="Especifica detalles como colores, modelos, etc."></textarea>
+                        </div>
+                    </fieldset>
+                </div>
 
-                    <p>
-                    <label for="fecha">Fecha de entrega</label>
-                    <input type="date" id="fecha" name="fecha" required>
-                    </p>
-
-                    <p>
-                    <label for="notas">Alguna indicación</label>
-                    <textarea id="notas" name="notas" rows="3"></textarea>
-                    </p>
-
-                    <p>
+                <div class="checkbox-group">
                     <input type="checkbox" id="terminos" name="terminos" required>
-                    <label for="terminos">Acepto que el pedido se confirma por teléfono</label>
-                    </p>
-                </fieldset>
-                <button type="submit">Enviar pedido</button>
-                </form>
-            </section>
+                    <label for="terminos">Acepto que la confirmación del pedido se realizará vía telefónica o WhatsApp.</label>
+                </div>
 
-        </main>
+                <button type="submit" class="btn-submit">Enviar Pedido Ahora</button>
+            </form>
+        </section>
 
-        <aside>
-            <h2>¿Sabías?</h2>
-            <p>Jugar juegos en el las PCs, ayuda a que mejores tu dactilografia?</p>
+        <!-- Tip Informativo -->
+        <aside class="did-you-know">
+            <div class="aside-icon">💡</div>
+            <div>
+                <h3>¿Sabías qué?</h3>
+                <p>Usar teclado al jugar en computadora ayuda notablemente a mejorar tu agilidad mental y dactilografía.</p>
+            </div>
         </aside>
 
-        <footer id="Contactos">
-            <h2>Contactanos</h2>
-            <address>
-                Colquencha cerca de la plaza principal<br>
-                Teléfono: 740 903 98
-            </address>
-            <p><small>&copy; 2026 Level Up Store</small></p>
-        </footer>
+    </main>
 
-    </body>
+    <footer id="Contactos">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h2>Level Up Store</h2>
+                <address>
+                    📍 Colquencha, cerca de la plaza principal<br>
+                    📞 Teléfono / WhatsApp: <strong>740 903 98</strong>
+                </address>
+            </div>
+            <div class="footer-bottom">
+                <p><small>&copy; 2026 Level Up Store — Todos los derechos reservados.</small></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
 </html>
