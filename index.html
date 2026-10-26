@@ -2,102 +2,104 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scarle=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Libreria, internet y tambien tienda de regalos en colquencha.">
-        <title> Level Up Store </title>
-        <link rel="Stylesheet" href="estilos.css">
+        <title>Level Up Store</title>
+        <link rel="stylesheet" href="estilos.css">
     </head>
     <body>
         <header>
-            <h1> Level Up Store </h1>
+            <h1>Level Up Store</h1>
             <p>Libreria, internet y tambien tienda de regalos en colquencha.</p>
-            <nav>
+            <button type="button" id="menu-toggle" aria-expanded="false" aria-controls="menu-movil">
+                ☰ Menú
+            </button>
+            <nav id="menu-movil">
                 <ul>
-                    <li><a href="#Productos">Aqui Todos los Productos Escolares</a> </li>
-                    <li><a href="#Regalos">Mira Nuestros Regalos</a> </li>
-                    <li><a href="#Horarios">Los Horarios</a> </li>
-                    <li><a href="#Contactos">Contactanos</a> </li>
-                    <li><a href="#Promociones"> las mejores Promociones y ofertas </a> </li>
-                    <li><a href="#Pedidos"> Realiza tu pedido desde aqui</a> </li>
-                    
+                    <li><a href="#Productos">Productos Escolares</a></li>
+                    <li><a href="#Regalos">Regalos</a></li>
+                    <li><a href="#Horarios">Horarios</a></li>
+                    <li><a href="#Promociones">Promociones</a></li>
+                    <li><a href="#panel">Novedades y Servicios</a></li>
+                    <li><a href="#Pedidos">Realiza tu pedido</a></li>
+                    <li><a href="#Contactos">Contáctanos</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <section id="Productos">
-                <h2>Aqui Todos los Productos Escolares</h2>
-                <article>
-                    <h3>Colores</h3>
-                    <p>Colores de todas las marcas, fabelcastel, nataraj, sabonis, etc.</p>
-                </article>
+                <h2>Catálogo de Productos Escolares y Útiles</h2>
 
-                <article>
-                    <h3>Boligrafos</h3>
-                    <p>Aqui los mejores boligrafos, de diferentes colores y marcas</p>
-                </article>
+                <!-- Controles de búsqueda y filtrado dinámico (eventos.js) -->
+                <div class="controles">
+                    <label for="buscador" class="visualmente-oculto">Buscar productos</label>
+                    <input type="search" id="buscador" placeholder="Buscar útiles, regalos..." autocomplete="off">
+                    <div id="filtros">
+                        <button type="button" class="activo" data-categoria="todos">Todos</button>
+                        <button type="button" data-categoria="escolares">Escolares</button>
+                        <button type="button" data-categoria="regalos">Regalos</button>
+                        <button type="button" data-categoria="cosmeticos">Cosméticos</button>
+                    </div>
+                    <p id="resultado" aria-live="polite"></p>
+                </div>
 
-                <article>
-                    <h3>Hojas</h3>
-                    <p>Tenemos hojas bond, hojas de colores, hojas traper, etc.</p>
-                </article>
-
-                <article>
-                    <h3>Marcadores</h3>
-                    <p>Todos los marcadores que necesitaras</p>
-                </article>
-
-                <article>
-                    <h3>Cuadernos y demas</h3>
-                    <p>cuardenos de todo tamaño, como tambien anillados, y archivadores</p>
-                </article>
+                <!-- Contenedor dinámico donde render.js y eventos.js dibujan las tarjetas -->
+                <div id="lista-productos"></div>
             </section>
 
             <section id="Regalos">
-                <h2>En esta seccion puedes ver todos nuestros regalos disponibles</h2>
-                <article>
-                    <h3>Osos de peluche</h3>
-                    <p>Osos de peluche de todo tamaño y formas</p>
-                </article>
+                <h2>En esta sección puedes ver nuestros regalos destacados</h2>
+                <div class="galeria-regalos">
+                    <article>
+                        <img src="peluche_regalo.jpg" alt="Osos de peluche para regalo" class="img-articulo">
+                        <h3>Osos de peluche</h3>
+                        <p>Osos de peluche de todo tamaño y formas, ideales para obsequiar a esa persona especial.</p>
+                    </article>
 
-                <article>
-                    <h3>Relojes</h3>
-                    <p>relojes con las mejores formas y y tamaños para decoraciones y de uso personal</p>
-                </article>
+                    <article>
+                        <img src="collares_portafotos.jpg" alt="Collares dúo y portafotos" class="img-articulo">
+                        <h3>Collares, manillas y portafotos</h3>
+                        <p>Collares y manillas para compartir en pareja o amigos, además de portafotos decorativos.</p>
+                    </article>
 
-                <article>
-                    <h3>Portafotos</h3>
-                    <p>para que guardes tus recuerdos en un marco bonito tenemos portafotos disponibles a tu eleccion</p>
-                </article>
-                
-                <article>
-                    <h3>Collares y manillas</h3>
-                    <p>Collares y manillas para compartir con esa persona especial, y tambien con las iniciales que mas te gusten </p>
-                </article>
+                    <article>
+                        <img src="cosmeticos_perfumes.jpg" alt="Perfumes y cosméticos" class="img-articulo">
+                        <h3>Perfumes y Maquillaje</h3>
+                        <p>Variedad en fragancias, perfumes y cosméticos para cuidado personal y ocasiones de regalo.</p>
+                    </article>
+                </div>
             </section>
 
             <section id="Promociones">
                 <h2>Las mejores Ofertas y Promociones de Level Up</h2>
                 <article>
-                    <h3>Viernes 2x1 en las maquinas</h3>
-                    <p>ven a jugar los mejores juegos del lugar, con tu amigo los viernes pagan de una maquina y juegan 2 </p>
+                    <h3>Viernes 2x1 en las máquinas</h3>
+                    <p>Ven a jugar los mejores juegos del lugar con tu amigo: los viernes pagan de una máquina y juegan 2.</p>
                 </article>
 
                 <article>
                     <h3>Promo cumpleaños</h3>
-                    <p>Si es tu cumpleaños, ven con tu carnet y podras jugar gratis todo el dia.</p>
+                    <p>Si es tu cumpleaños, ven con tu carnet y podrás jugar gratis todo el día.</p>
                 </article>
+
+                <figure>
+                    <img src="internet_gaming.jpg"
+                    alt="Zona de juegos e internet en Level Up Store"
+                    width="700" height="394">
+                    <figcaption>Sala de Internet de alta velocidad y videojuegos en red en Colquencha</figcaption>
+                </figure>
             </section>
 
             <section id="Horarios">
-                <h2>Level Up Store estará habierta para atenderte desdelos siguiente horarios</h2>
+                <h2>Horarios de atención de Level Up Store</h2>
                 <article>
                     <h3>De Domingos a Jueves</h3>
-                    <p>Desde las 14:00 pm hasta las 22:00</p>
+                    <p>Desde las 14:00 hasta las 22:00</p>
                 </article>
 
                 <article>
-                    <h3>Solo Viernes y Sabados</h3>
-                    <p>Desde las 17:00 pm hasta las 21:00 pm</p>
+                    <h3>Solo Viernes y Sábados</h3>
+                    <p>Desde las 17:00 hasta las 21:00</p>
                 </article>
 
                 <table>
@@ -110,26 +112,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Boligrafos</td> <td>Bs. 1.50</td> <td>todos los dias</td></tr>
-                        <tr><td>Lapiz 2B</td> <td>Bs. 1.00</td> <td>todos los dias</td></tr>
-                        <tr><td>Docena de Colores</td> <td>Bs. 18.00</td> <td>todos los dias</td></tr>
+                        <tr><td>Bolígrafos</td> <td>Bs. 1.50</td> <td>todos los días</td></tr>
+                        <tr><td>Lápiz 2B</td> <td>Bs. 1.00</td> <td>todos los días</td></tr>
+                        <tr><td>Docena de Colores</td> <td>Bs. 18.00</td> <td>todos los días</td></tr>
                     </tbody>
                 </table>
 
                 <figure>
-                    <img src="materiales.jfif"
-                    alt="materiales escolares a tu eleccion"
-                    width="600" height="400">
-                    <figcaption>los mejores materiales de colquencha</figcaption>
+                    <img src="utiles_escolares.jpg"
+                    alt="Materiales y útiles escolares a tu elección"
+                    width="600" height="450">
+                    <figcaption>Los mejores materiales y útiles escolares de Colquencha</figcaption>
                 </figure>
-
             </section>
 
             <section id="Pedidos">
                 <h2>Hacer un pedido</h2>
 
                 <form action="/Pedidos" method="post">
-
                 <fieldset>
                     <legend>Tus datos</legend>
 
@@ -149,7 +149,7 @@
                     <label for="telefono">Teléfono</label>
                     <input type="tel" id="telefono" name="telefono"
                             autocomplete="tel" pattern="[0-9]{7,8}"
-                            title="7 u 8 dígitos, sin espacios">
+                            title="7 u 8 dígitos, sin espacios" required>
                     </p>
                 </fieldset>
 
@@ -157,13 +157,13 @@
                     <legend>Tu pedido</legend>
 
                     <p>
-                    <label for="Productos">Productos</label>
-                    <select id="Productos" name="Productos" required>
+                    <label for="producto-pedido">Productos</label>
+                    <select id="producto-pedido" name="Productos" required>
                         <option value="">Elige uno</option>
                         <option value="Escolares">Boligrafos Escolares</option>
                         <option value="Peluches">Osos de Peluche</option>
                         <option value="fotos">Portafotos</option>
-                        <option value="Marcadores">Marcadadores Fosforecentes</option>
+                        <option value="Marcadores">Marcadores Fosforescentes</option>
                         <option value="Hojas">Hojas Bond</option>
                     </select>
                     </p>
@@ -193,21 +193,63 @@
                 </form>
             </section>
 
+            <!-- Sección interactiva Panel con Acordeón y Avisos (jQuery) -->
+            <section id="panel">
+                <h2>Panel de Servicios y Preguntas Frecuentes</h2>
+
+                <div id="acordeon">
+                    <div class="item">
+                        <button type="button" class="titulo" aria-expanded="false">¿Hacen impresiones, anillados y plastificados?</button>
+                        <div class="cuerpo" hidden>
+                            <p>Sí, realizamos impresiones a color y blanco/negro, fotocopias, anillados y plastificados al instante.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <button type="button" class="titulo" aria-expanded="false">¿Qué juegos y servicios hay en internet?</button>
+                        <div class="cuerpo" hidden>
+                            <p>Contamos con computadoras rápidas para investigación escolar, juegos en red (Dota 2, Left 4 Dead) y dactilografía.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <button type="button" class="titulo" aria-expanded="false">¿Qué formas de pago aceptan?</button>
+                        <div class="cuerpo" hidden>
+                            <p>Aceptamos pagos en efectivo y transferencias rápidas mediante código QR.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="mostrar-avisos">Mostrar avisos</button>
+                <ul id="avisos">
+                    <li hidden>🎉 ¡Viernes 2x1 en horas de internet y videojuegos!</li>
+                    <li hidden>🧸 Llegaron nuevos peluches gigantes y portafotos para fechas especiales.</li>
+                    <li hidden>📚 Descuento especial en listas completas de útiles escolares.</li>
+                </ul>
+            </section>
+
         </main>
 
         <aside>
             <h2>¿Sabías?</h2>
-            <p>Jugar juegos en el las PCs, ayuda a que mejores tu dactilografia?</p>
+            <p>Jugar en la PC y realizar trabajos digitales ayuda a mejorar tu velocidad de dactilografía y coordinación.</p>
         </aside>
 
         <footer id="Contactos">
-            <h2>Contactanos</h2>
+            <h2>Contáctanos</h2>
             <address>
-                Colquencha cerca de la plaza principal<br>
+                Colquencha, cerca de la plaza principal<br>
                 Teléfono: 740 903 98
             </address>
             <p><small>&copy; 2026 Level Up Store</small></p>
         </footer>
+
+        <!-- Scripts integrados del proyecto -->
+        <script src="jquery-3.7.1.min.js"></script>
+        <script src="app.js"></script>
+        <script src="funciones.js"></script>
+        <script src="datos.js"></script>
+        <script src="render.js"></script>
+        <script src="eventos.js"></script>
+        <script src="jquery-panel.js"></script>
 
     </body>
 </html>
