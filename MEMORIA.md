@@ -97,11 +97,36 @@ Todas las imágenes se asociaron en el arreglo de datos `datos.js` y se integrar
 
 | Archivo | Estado | Responsabilidad Principal |
 | :--- | :---: | :--- |
-| [`index.html`](file:///c:/Users/Personal/Documents/proyecto_tienda/index.html) | **100% Operativo** | Estructura semántica, controles de filtrado, catálogo, panel y formulario. |
-| [`estilos.css`](file:///c:/Users/Personal/Documents/proyecto_tienda/estilos.css) | **100% Operativo** | Diseño oscuro tecnológico, variables CSS, efectos glow, Grid y Flexbox. |
-| [`datos.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/datos.js) | **100% Operativo** | Base de datos de productos con precios, stock, imágenes y métodos ES6. |
-| [`render.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/render.js) | **100% Operativo** | Generación dinámica de tarjetas HTML en `#lista-productos`. |
-| [`eventos.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/eventos.js) | **100% Operativo** | Búsqueda en vivo, filtrado de categorías y validación de formulario. |
+### 3.5 Integración de Inventario Real y Categorización Completa (27 de Octubre de 2026)
+* **Incorporación del listado oficial de inventario:**
+  * Se procesó el inventario provisto por los clientes y se estructuró en 4 áreas fundamentales:
+    1. **Materiales Escolares y Papelería:** Cuadernos empastados (carta/oficio/normal), bolígrafos (Sabonis, Faber-Castell, Monami, Pilot, Orion), marcadores al agua/alcohol/doble punta/resaltadores, hojas bond (carta/oficio), hojas de color, hojas de carpeta Líder/ABC, hojas Trapper, archivadores, pegamentos (UHU, Isocola, Merleto, Carpicola), tijeras, gomas, tajadores, correctores Radex y papeles especiales (lustroso, mosaico, 3D, estañado).
+    2. **Tienda de Regalos y Novedades:** Peluches temáticos (Stitch, Snoopy clásico, Capibaras con mochila, Emojis), osos de peluche gigantes (1m) y medianos, portafotos de madera/vidrio, tazas decoradas, tomatodos, adornos, billeteras, relojes y bolas de cristal con nieve y música.
+    3. **Cosméticos y Belleza:** Paletas de maquillaje, delineadores, brillos labiales, perfumes importados, aretes, collares, collares dúo magnéticos de pareja y accesorios de cabello (winchas, ligas).
+    4. **Internet y Servicios Digitales:** 1 hora de internet de alta velocidad (Bs 2.00), PC Gamer en red (Bs 3.00), impresiones a color (Bs 2.00) y blanco/negro (Bs 1.00), fotocopias (Bs 0.50 / 1.50 color), transcripciones (Bs 4.00 x hoja) y anillados/plastificados.
+* **Motor de renderizado categorizado ([`render.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/render.js)):**
+  * El catálogo ahora divide automáticamente los artículos en bloques temáticos (`.bloque-categoria`) con cabeceras que incluyen iconos, descripción y conteo dinámico de artículos.
+  * Cada tarjeta incorpora indicador de disponibilidad (`En stock` / `Agotado`), unidad de medida y botón interactivo `🛒 Pedir este artículo` que traslada al cliente directamente al formulario y preselecciona el producto.
+* **Confirmación por WhatsApp en [`eventos.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/eventos.js):**
+  * Al enviar el formulario de pedidos, se genera un enlace directo a la API de WhatsApp (`https://wa.me/59174090398`) con el detalle del cliente, producto, cantidad y fecha.
+* **Incorporación de imagen real temática:**
+  * Se agregó la fotografía [`peluches_stitch_capibara.jpg`](file:///c:/Users/Personal/Documents/proyecto_tienda/peluches_stitch_capibara.jpg) destacando los peluches de Stitch, Snoopy y Capibaras.
+* **Actualización del catálogo remoto ([`datos.json`](file:///c:/Users/Personal/Documents/proyecto_tienda/datos.json)):**
+  * El archivo JSON sincroniza los 37 productos y servicios oficiales para pruebas con `fetch` y `jQuery`.
+
+---
+
+## 4. Estado Actual de los Archivos del Proyecto
+
+| Archivo | Estado | Responsabilidad Principal |
+| :--- | :---: | :--- |
+| [`index.html`](file:///c:/Users/Personal/Documents/proyecto_tienda/index.html) | **100% Operativo** | Estructura semántica, controles de filtrado por 4 categorías, catálogo, tabla de precios y formulario. |
+| [`estilos.css`](file:///c:/Users/Personal/Documents/proyecto_tienda/estilos.css) | **100% Operativo** | Diseño oscuro tecnológico, bloques por categoría, tarjetas interactivas, badges y botones de pedido. |
+| [`datos.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/datos.js) | **100% Operativo** | Base de datos completa con más de 55 artículos organizados por categoría, stock y precios reales. |
+| [`render.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/render.js) | **100% Operativo** | Renderizado del catálogo agrupado por categorías con cabeceras y selección de pedidos. |
+| [`eventos.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/eventos.js) | **100% Operativo** | Búsqueda en vivo, filtrado de 4 categorías y confirmación de pedidos vía WhatsApp. |
+| [`remoto.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/remoto.js) | **100% Operativo** | Carga asíncrona (Fetch y jQuery), gestión de 3 estados y pintado de tarjetas. |
+| [`datos.json`](file:///c:/Users/Personal/Documents/proyecto_tienda/datos.json) | **100% Operativo** | Catálogo estructurado en JSON de Level Up Store (Librería, Internet y Regalos). |
 | [`jquery-panel.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/jquery-panel.js) | **100% Operativo** | Acordeón de FAQ, menú desplegable para móviles y avisos escalonados. |
 | [`jquery-3.7.1.min.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/jquery-3.7.1.min.js) | **100% Operativo** | Librería jQuery local para ejecución sin necesidad de conexión externa. |
 | [`app.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/app.js) | **100% Operativo** | Prácticas iniciales de variables y manipulación del DOM sin errores. |

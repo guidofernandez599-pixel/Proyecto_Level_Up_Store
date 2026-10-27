@@ -70,10 +70,20 @@ if (formulario) {
     const datos = Object.fromEntries(new FormData(formulario));
     console.log("Pedido recibido:", datos);
 
+    const mensajeExito = `¡Gracias ${datos.nombre || ""}! Tu pedido de "${datos.Productos}" (${datos.cantidad} u.) para el ${datos.fecha} quedó registrado.`;
     if (resultado) {
-      resultado.textContent = `¡Gracias ${datos.nombre || ""}! El pedido quedó registrado.`;
+      resultado.textContent = mensajeExito;
     }
-    alert(`¡Gracias ${datos.nombre || ""}! Tu pedido ha sido registrado con éxito.`);
+
+    // Mensaje preformateado para WhatsApp de Level Up Store (Colquencha)
+    const msgWsp = `¡Hola Level Up Store! Mi nombre es ${datos.nombre}. Deseo encargar: ${datos.cantidad}x ${datos.Productos}. Fecha de entrega: ${datos.fecha}. Tel: ${datos.telefono}. Notas: ${datos.notas || "Ninguna"}.`;
+    const urlWsp = `https://wa.me/59174090398?text=${encodeURIComponent(msgWsp)}`;
+
+    const enviarWsp = confirm(`${mensajeExito}\n\n¿Deseas enviar la confirmación inmediata a Level Up Store por WhatsApp?`);
+    if (enviarWsp) {
+      window.open(urlWsp, "_blank");
+    }
+
     formulario.reset();
   });
 }

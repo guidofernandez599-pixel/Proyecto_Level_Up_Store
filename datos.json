@@ -1,0 +1,435 @@
+﻿{
+  "_nota": "Datos oficiales del catÃ¡logo de Level Up Store para consultas asÃ­ncronas y respaldo offline. Contiene informaciÃ³n del negocio, categorÃ­as y catÃ¡logo completo de productos de librerÃ­a escolar, centro de internet y tienda de regalos en Colquencha.",
+  "negocio": {
+    "nombre": "Level Up Store",
+    "rubro": "LibrerÃ­a, Internet y Tienda de Regalos",
+    "propietarios": "Bragin Quispe Mamani y Lucy Gladys Fernandez Ajno",
+    "direccion": "Colquencha, cerca de la plaza principal, La Paz - Bolivia",
+    "telefono": "74090398",
+    "coordenadas": {
+      "lat": -16.9388,
+      "lng": -68.2435
+    },
+    "horario": {
+      "apertura": "14:00",
+      "cierre": "22:00",
+      "dias": "Domingos a Jueves (14:00 - 22:00) | Viernes y SÃ¡bados (17:00 - 21:00)"
+    }
+  },
+  "categorias": [
+    "Materiales Escolares y PapelerÃ­a",
+    "Tienda de Regalos y Novedades",
+    "CosmÃ©ticos y Accesorios",
+    "Internet y Servicios Digitales"
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "BolÃ­grafos Sabonis punta fina (Azul / Negro / Rojo)",
+      "categoria": "escolares",
+      "precio": 1.50,
+      "unidad": "unidad",
+      "stock": 65,
+      "disponible": true,
+      "proveedor": "Sabonis Bolivia",
+      "imagen": "imagenes/utiles_escolares.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "BolÃ­grafos Faber-Castell / Pilot / Monami / Orion",
+      "categoria": "escolares",
+      "precio": 2.50,
+      "unidad": "unidad",
+      "stock": 45,
+      "disponible": true,
+      "proveedor": "Faber-Castell / Pilot",
+      "imagen": "imagenes/utiles_escolares.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "Marcadores Sabonis x12 colores al agua",
+      "categoria": "escolares",
+      "precio": 25.00,
+      "unidad": "estuche",
+      "stock": 15,
+      "disponible": true,
+      "proveedor": "Sabonis Bolivia",
+      "imagen": "imagenes/utiles_escolares.jpg"
+    },
+    {
+      "id": 4,
+      "nombre": "Marcadores gruesos de agua y de alcohol (Milcar)",
+      "categoria": "escolares",
+      "precio": 30.00,
+      "unidad": "estuche",
+      "stock": 12,
+      "disponible": true,
+      "proveedor": "Milcar Bolivia",
+      "imagen": "imagenes/utiles_escolares.jpg"
+    },
+    {
+      "id": 5,
+      "nombre": "Marcadores resaltadores fosforescentes",
+      "categoria": "escolares",
+      "precio": 14.00,
+      "unidad": "paquete",
+      "stock": 18,
+      "disponible": true,
+      "proveedor": "Faber-Castell",
+      "imagen": "imagenes/utiles_escolares.jpg"
+    },
+    {
+      "id": 6,
+      "nombre": "Caja de colores Faber-Castell x12",
+      "categoria": "escolares",
+      "precio": 18.00,
+      "unidad": "caja",
+      "stock": 20,
+      "disponible": true,
+      "proveedor": "Faber-Castell Bolivia",
+      "imagen": "imagenes/utiles_escolares.jpg"
+    },
+    {
+      "id": 7,
+      "nombre": "Colores escolares Nataraj / Milcar x12",
+      "categoria": "escolares",
+      "precio": 12.00,
+      "unidad": "caja",
+      "stock": 15,
+      "disponible": true,
+      "proveedor": "Nataraj / Milcar",
+      "imagen": "imagenes/utiles_escolares.jpg"
+    },
+    {
+      "id": 8,
+      "nombre": "Cuadernos empastados tamaÃ±o carta",
+      "categoria": "escolares",
+      "precio": 18.00,
+      "unidad": "unidad",
+      "stock": 30,
+      "disponible": true,
+      "proveedor": "PapelerÃ­a CÃ³ndor",
+      "imagen": "imagenes/materiales.jfif"
+    },
+    {
+      "id": 9,
+      "nombre": "Cuadernos empastados tamaÃ±o oficio",
+      "categoria": "escolares",
+      "precio": 24.00,
+      "unidad": "unidad",
+      "stock": 16,
+      "disponible": true,
+      "proveedor": "PapelerÃ­a CÃ³ndor",
+      "imagen": "imagenes/materiales.jfif"
+    },
+    {
+      "id": 10,
+      "nombre": "Hojas Bond tamaÃ±o carta 75g (paquete 500 hjs)",
+      "categoria": "escolares",
+      "precio": 35.00,
+      "unidad": "paquete",
+      "stock": 14,
+      "disponible": true,
+      "proveedor": "PapelerÃ­a CÃ³ndor",
+      "imagen": "imagenes/utiles_escolares.jpg"
+    },
+    {
+      "id": 11,
+      "nombre": "Hojas Bond tamaÃ±o oficio 75g (paquete 500 hjs)",
+      "categoria": "escolares",
+      "precio": 40.00,
+      "unidad": "paquete",
+      "stock": 8,
+      "disponible": true,
+      "proveedor": "PapelerÃ­a CÃ³ndor",
+      "imagen": "imagenes/utiles_escolares.jpg"
+    },
+    {
+      "id": 12,
+      "nombre": "Hojas de carpeta LÃ­der y ABC (100 hojas)",
+      "categoria": "escolares",
+      "precio": 15.00,
+      "unidad": "paquete",
+      "stock": 22,
+      "disponible": true,
+      "proveedor": "LÃ­der / ABC",
+      "imagen": "imagenes/materiales.jfif"
+    },
+    {
+      "id": 13,
+      "nombre": "Tapas para anillado (plÃ¡sticas transparentes/color)",
+      "categoria": "escolares",
+      "precio": 4.00,
+      "unidad": "par",
+      "stock": 0,
+      "disponible": false,
+      "proveedor": "PapelerÃ­a CÃ³ndor",
+      "imagen": "imagenes/materiales.jfif"
+    },
+    {
+      "id": 14,
+      "nombre": "Pegamento UHU / Isocola / Merleto / Carpicola",
+      "categoria": "escolares",
+      "precio": 6.00,
+      "unidad": "unidad",
+      "stock": 25,
+      "disponible": true,
+      "proveedor": "UHU / Isocola",
+      "imagen": "imagenes/materiales.jfif"
+    },
+    {
+      "id": 15,
+      "nombre": "LÃ¡pices de grafito HB, 2B y 8B (Faber-Castell)",
+      "categoria": "escolares",
+      "precio": 2.00,
+      "unidad": "unidad",
+      "stock": 50,
+      "disponible": true,
+      "proveedor": "Faber-Castell",
+      "imagen": "imagenes/utiles_escolares.jpg"
+    },
+    {
+      "id": 16,
+      "nombre": "Corrector lÃ­quido y en cinta Radex",
+      "categoria": "escolares",
+      "precio": 5.00,
+      "unidad": "unidad",
+      "stock": 20,
+      "disponible": true,
+      "proveedor": "Radex Bolivia",
+      "imagen": "imagenes/utiles_escolares.jpg"
+    },
+    {
+      "id": 17,
+      "nombre": "Goma de borrar Sabonis y borrador miga de pan",
+      "categoria": "escolares",
+      "precio": 2.00,
+      "unidad": "unidad",
+      "stock": 45,
+      "disponible": true,
+      "proveedor": "Sabonis Bolivia",
+      "imagen": "imagenes/utiles_escolares.jpg"
+    },
+    {
+      "id": 18,
+      "nombre": "Peluche tierno de Stitch",
+      "categoria": "regalos",
+      "precio": 45.00,
+      "unidad": "unidad",
+      "stock": 6,
+      "disponible": true,
+      "proveedor": "PelucherÃ­a & Regalos El Sol",
+      "imagen": "imagenes/peluches_stitch_capibara.jpg"
+    },
+    {
+      "id": 19,
+      "nombre": "Peluche de Snoopy clÃ¡sico",
+      "categoria": "regalos",
+      "precio": 40.00,
+      "unidad": "unidad",
+      "stock": 5,
+      "disponible": true,
+      "proveedor": "PelucherÃ­a & Regalos El Sol",
+      "imagen": "imagenes/peluches_stitch_capibara.jpg"
+    },
+    {
+      "id": 20,
+      "nombre": "Peluche de Capibara con mochilita",
+      "categoria": "regalos",
+      "precio": 48.00,
+      "unidad": "unidad",
+      "stock": 7,
+      "disponible": true,
+      "proveedor": "PelucherÃ­a & Regalos El Sol",
+      "imagen": "imagenes/peluches_stitch_capibara.jpg"
+    },
+    {
+      "id": 21,
+      "nombre": "Osos de peluche gigantes con lazo (1 metro)",
+      "categoria": "regalos",
+      "precio": 180.00,
+      "unidad": "unidad",
+      "stock": 3,
+      "disponible": true,
+      "proveedor": "PelucherÃ­a & Regalos El Sol",
+      "imagen": "imagenes/peluche_regalo.jpg"
+    },
+    {
+      "id": 22,
+      "nombre": "Portafotos decorativos de madera y vidrio",
+      "categoria": "regalos",
+      "precio": 15.00,
+      "unidad": "unidad",
+      "stock": 8,
+      "disponible": true,
+      "proveedor": "Distribuidora Mayorista La Paz",
+      "imagen": "imagenes/collares_portafotos.jpg"
+    },
+    {
+      "id": 23,
+      "nombre": "Tomatodos deportivos y juveniles",
+      "categoria": "regalos",
+      "precio": 25.00,
+      "unidad": "unidad",
+      "stock": 14,
+      "disponible": true,
+      "proveedor": "Distribuidora Mayorista La Paz",
+      "imagen": "imagenes/collares_portafotos.jpg"
+    },
+    {
+      "id": 24,
+      "nombre": "Tazas decoradas con diseÃ±os especiales",
+      "categoria": "regalos",
+      "precio": 20.00,
+      "unidad": "unidad",
+      "stock": 16,
+      "disponible": true,
+      "proveedor": "Distribuidora Mayorista La Paz",
+      "imagen": "imagenes/collares_portafotos.jpg"
+    },
+    {
+      "id": 25,
+      "nombre": "Bolas de cristal con nieve y mÃºsica",
+      "categoria": "regalos",
+      "precio": 45.00,
+      "unidad": "unidad",
+      "stock": 6,
+      "disponible": true,
+      "proveedor": "PelucherÃ­a & Regalos El Sol",
+      "imagen": "imagenes/peluche_regalo.jpg"
+    },
+    {
+      "id": 26,
+      "nombre": "LÃ¡mparas de mesa con formas decorativas",
+      "categoria": "regalos",
+      "precio": 38.00,
+      "unidad": "unidad",
+      "stock": 8,
+      "disponible": true,
+      "proveedor": "Deco Luz La Paz",
+      "imagen": "imagenes/collares_portafotos.jpg"
+    },
+    {
+      "id": 27,
+      "nombre": "Billeteras para varÃ³n y para dama",
+      "categoria": "regalos",
+      "precio": 30.00,
+      "unidad": "unidad",
+      "stock": 12,
+      "disponible": true,
+      "proveedor": "Distribuidora Mayorista La Paz",
+      "imagen": "imagenes/collares_portafotos.jpg"
+    },
+    {
+      "id": 28,
+      "nombre": "Paletas de maquillaje y sombras de ojos",
+      "categoria": "cosmeticos",
+      "precio": 22.00,
+      "unidad": "estuche",
+      "stock": 10,
+      "disponible": true,
+      "proveedor": "Importadora Glow & Style",
+      "imagen": "imagenes/cosmeticos_perfumes.jpg"
+    },
+    {
+      "id": 29,
+      "nombre": "Perfumes y fragancias seleccionadas",
+      "categoria": "cosmeticos",
+      "precio": 28.00,
+      "unidad": "frasco",
+      "stock": 11,
+      "disponible": true,
+      "proveedor": "Importadora Glow & Style",
+      "imagen": "imagenes/cosmeticos_perfumes.jpg"
+    },
+    {
+      "id": 30,
+      "nombre": "Collares dÃºo magnÃ©ticos de pareja",
+      "categoria": "cosmeticos",
+      "precio": 35.50,
+      "unidad": "par",
+      "stock": 8,
+      "disponible": true,
+      "proveedor": "BisuterÃ­a Fina",
+      "imagen": "imagenes/collares_portafotos.jpg"
+    },
+    {
+      "id": 31,
+      "nombre": "Brillos de colores y bÃ¡lsamos hidratantes",
+      "categoria": "cosmeticos",
+      "precio": 8.00,
+      "unidad": "unidad",
+      "stock": 25,
+      "disponible": true,
+      "proveedor": "Importadora Glow & Style",
+      "imagen": "imagenes/cosmeticos_perfumes.jpg"
+    },
+    {
+      "id": 32,
+      "nombre": "1 hora de Internet de alta velocidad",
+      "categoria": "internet",
+      "precio": 2.00,
+      "unidad": "hora",
+      "stock": 15,
+      "disponible": true,
+      "proveedor": "Level Up Red Gaming",
+      "imagen": "imagenes/internet_gaming.jpg"
+    },
+    {
+      "id": 33,
+      "nombre": "PC Gamer 1 hora (videojuegos en red)",
+      "categoria": "internet",
+      "precio": 3.00,
+      "unidad": "hora",
+      "stock": 8,
+      "disponible": true,
+      "proveedor": "Level Up Red Gaming",
+      "imagen": "imagenes/internet_gaming.jpg"
+    },
+    {
+      "id": 34,
+      "nombre": "Impresiones a color (carta y oficio)",
+      "categoria": "internet",
+      "precio": 2.00,
+      "unidad": "hoja",
+      "stock": 100,
+      "disponible": true,
+      "proveedor": "Level Up Store",
+      "imagen": "imagenes/internet_gaming.jpg"
+    },
+    {
+      "id": 35,
+      "nombre": "Fotocopias blanco y negro",
+      "categoria": "internet",
+      "precio": 0.50,
+      "unidad": "hoja",
+      "stock": 400,
+      "disponible": true,
+      "proveedor": "Level Up Store",
+      "imagen": "imagenes/internet_gaming.jpg"
+    },
+    {
+      "id": 36,
+      "nombre": "Transcripciones de trabajos escolares",
+      "categoria": "internet",
+      "precio": 4.00,
+      "unidad": "hoja",
+      "stock": 50,
+      "disponible": true,
+      "proveedor": "Level Up Store",
+      "imagen": "imagenes/internet_gaming.jpg"
+    },
+    {
+      "id": 37,
+      "nombre": "Anillados y plastificados de documentos",
+      "categoria": "internet",
+      "precio": 6.00,
+      "unidad": "trabajo",
+      "stock": 20,
+      "disponible": true,
+      "proveedor": "Level Up Store",
+      "imagen": "imagenes/materiales.jfif"
+    }
+  ]
+}
+
