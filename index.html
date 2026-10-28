@@ -13,9 +13,13 @@
     <header>
         <h1>Level Up Store</h1>
         <p>Libreria, internet y tambien tienda de regalos en colquencha.</p>
-        <button type="button" id="menu-toggle" aria-expanded="false" aria-controls="menu-movil">
-            ☰ Menú
-        </button>
+        <div class="acciones-cabecera">
+            <button type="button" id="header-tema-toggle" aria-pressed="false">🌙 Modo oscuro</button>
+            <a href="#preferencias" class="enlace-preferencias">⚙️ Preferencias</a>
+            <button type="button" id="menu-toggle" aria-expanded="false" aria-controls="menu-movil">
+                ☰ Menú
+            </button>
+        </div>
         <nav id="menu-movil">
             <ul>
                 <li><a href="#Productos">Productos Escolares</a></li>
@@ -33,15 +37,17 @@
         <section id="Productos">
             <h2>Catálogo Completo por Categorías</h2>
             <p class="seccion-bajada" style="color: var(--color-suave); margin-top: -0.5rem; margin-bottom: 1rem;">
-                Explora nuestro catálogo organizado: útiles escolares, peluches y regalos, cosméticos y servicios de internet en Colquencha.
+                Explora nuestro catálogo organizado: útiles escolares, peluches y regalos, cosméticos y servicios de
+                internet en Colquencha.
             </p>
 
             <!-- Controles de búsqueda y filtrado dinámico (eventos.js) -->
             <div class="controles">
                 <label for="buscador" class="visualmente-oculto">Buscar productos</label>
-                <input type="search" id="buscador" placeholder="Buscar útiles, peluches, regalos, servicios..." autocomplete="off">
+                <input type="search" id="buscador" placeholder="Buscar útiles, peluches, regalos, servicios..."
+                    autocomplete="off">
                 <div id="filtros">
-                    <button type="button" class="activo" data-categoria="todos">✨ Todos</button>
+                    <button type="button" class="activo" data-categoria="todos">📂 Categorías</button>
                     <button type="button" data-categoria="escolares">📚 Escolares y Papelería</button>
                     <button type="button" data-categoria="regalos">🎁 Regalos y Peluches</button>
                     <button type="button" data-categoria="cosmeticos">💄 Cosméticos</button>
@@ -58,27 +64,35 @@
             <h2>Regalos y Detalles Destacados</h2>
             <div class="galeria-regalos">
                 <article>
-                    <img src="imagenes/peluches_stitch_capibara.jpg" alt="Peluches tiernos de Stitch, Snoopy y Capibara" class="img-articulo">
+                    <img src="imagenes/peluches_stitch_capibara.jpg" alt="Peluches tiernos de Stitch, Snoopy y Capibara"
+                        class="img-articulo">
                     <h3>Peluches de Stitch, Snoopy y Capibaras</h3>
-                    <p>Colección especial de peluches suaves y tiernos: Stitch, Snoopy clásico y Capibaras con mochilita.</p>
+                    <p>Colección especial de peluches suaves y tiernos: Stitch, Snoopy clásico y Capibaras con
+                        mochilita.</p>
                 </article>
 
                 <article>
-                    <img src="imagenes/peluche_regalo.jpg" alt="Osos de peluche gigantes para regalo" class="img-articulo">
+                    <img src="imagenes/peluche_regalo.jpg" alt="Osos de peluche gigantes para regalo"
+                        class="img-articulo">
                     <h3>Osos de Peluche Gigantes y Medianos</h3>
-                    <p>Peluches de todo tamaño y formas con lazos y corazones, ideales para obsequiar a esa persona especial.</p>
+                    <p>Peluches de todo tamaño y formas con lazos y corazones, ideales para obsequiar a esa persona
+                        especial.</p>
                 </article>
 
                 <article>
-                    <img src="imagenes/collares_portafotos.jpg" alt="Collares dúo magnéticos y portafotos decorativos" class="img-articulo">
+                    <img src="imagenes/collares_portafotos.jpg" alt="Collares dúo magnéticos y portafotos decorativos"
+                        class="img-articulo">
                     <h3>Collares Dúo, Portafotos y Tazas</h3>
-                    <p>Collares magnéticos para parejas, marcos decorativos de madera, tazas personalizadas y tomatodos.</p>
+                    <p>Collares magnéticos para parejas, marcos decorativos de madera, tazas personalizadas y tomatodos.
+                    </p>
                 </article>
 
                 <article>
-                    <img src="imagenes/cosmeticos_perfumes.jpg" alt="Perfumes y cosméticos seleccionados" class="img-articulo">
+                    <img src="imagenes/cosmeticos_perfumes.jpg" alt="Perfumes y cosméticos seleccionados"
+                        class="img-articulo">
                     <h3>Perfumes, Maquillaje y Accesorios</h3>
-                    <p>Variedad en fragancias, paletas de sombras, delineadores, brillos labiales y accesorios para el cabello.</p>
+                    <p>Variedad en fragancias, paletas de sombras, delineadores, brillos labiales y accesorios para el
+                        cabello.</p>
                 </article>
             </div>
         </section>
@@ -175,7 +189,8 @@
         <section id="Pedidos">
             <h2>Hacer un pedido anticipado</h2>
             <p class="seccion-bajada" style="color: var(--color-suave); margin-top: -0.5rem; margin-bottom: 1rem;">
-                Encarga tus materiales escolares, peluches o reserva máquinas. Confirmamos tu pedido por teléfono o WhatsApp.
+                Encarga tus materiales escolares, peluches o reserva máquinas. Confirmamos tu pedido por teléfono o
+                WhatsApp.
             </p>
 
             <form action="/Pedidos" method="post">
@@ -207,39 +222,62 @@
                         <select id="producto-pedido" name="Productos" required>
                             <option value="">-- Elige un artículo del catálogo --</option>
                             <optgroup label="📚 Escolares y Papelería">
-                                <option value="Cuadernos empastados tamaño carta">Cuadernos empastados tamaño carta (Bs 18.00)</option>
-                                <option value="Cuadernos empastados tamaño oficio">Cuadernos empastados tamaño oficio (Bs 24.00)</option>
-                                <option value="Bolígrafos Sabonis punta fina">Bolígrafos Sabonis punta fina (Bs 1.50)</option>
-                                <option value="Marcadores Sabonis x12 colores al agua">Marcadores Sabonis x12 colores (Bs 25.00)</option>
-                                <option value="Caja de colores Faber-Castell x12">Caja de colores Faber-Castell x12 (Bs 18.00)</option>
-                                <option value="Hojas Bond tamaño carta 75g (paquete 500 hjs)">Hojas Bond tamaño carta (Bs 35.00)</option>
-                                <option value="Hojas cuadriculadas para carpeta (Líder / ABC)">Hojas de carpeta Líder/ABC (Bs 15.00)</option>
-                                <option value="Pegamento UHU / Isocola / Merleto / Carpicola">Pegamentos escolares (Bs 6.00)</option>
+                                <option value="Cuadernos empastados tamaño carta">Cuadernos empastados tamaño carta (Bs
+                                    18.00)</option>
+                                <option value="Cuadernos empastados tamaño oficio">Cuadernos empastados tamaño oficio
+                                    (Bs 24.00)</option>
+                                <option value="Bolígrafos Sabonis punta fina">Bolígrafos Sabonis punta fina (Bs 1.50)
+                                </option>
+                                <option value="Marcadores Sabonis x12 colores al agua">Marcadores Sabonis x12 colores
+                                    (Bs 25.00)</option>
+                                <option value="Caja de colores Faber-Castell x12">Caja de colores Faber-Castell x12 (Bs
+                                    18.00)</option>
+                                <option value="Hojas Bond tamaño carta 75g (paquete 500 hjs)">Hojas Bond tamaño carta
+                                    (Bs 35.00)</option>
+                                <option value="Hojas cuadriculadas para carpeta (Líder / ABC)">Hojas de carpeta
+                                    Líder/ABC (Bs 15.00)</option>
+                                <option value="Pegamento UHU / Isocola / Merleto / Carpicola">Pegamentos escolares (Bs
+                                    6.00)</option>
                             </optgroup>
                             <optgroup label="🎁 Regalos y Novedades">
                                 <option value="Peluche tierno de Stitch">Peluche tierno de Stitch (Bs 45.00)</option>
                                 <option value="Peluche de Snoopy clásico">Peluche de Snoopy clásico (Bs 40.00)</option>
-                                <option value="Peluche de Capibara con mochilita">Peluche de Capibara con mochilita (Bs 48.00)</option>
-                                <option value="Osos de peluche gigantes con lazo (1 metro)">Oso de peluche gigante con lazo (Bs 180.00)</option>
-                                <option value="Portafotos decorativos de madera y vidrio">Portafotos decorativo (Bs 15.00)</option>
+                                <option value="Peluche de Capibara con mochilita">Peluche de Capibara con mochilita (Bs
+                                    48.00)</option>
+                                <option value="Osos de peluche gigantes con lazo (1 metro)">Oso de peluche gigante con
+                                    lazo (Bs 180.00)</option>
+                                <option value="Portafotos decorativos de madera y vidrio">Portafotos decorativo (Bs
+                                    15.00)</option>
                                 <option value="Tomatodos deportivos y juveniles">Tomatodo deportivo (Bs 25.00)</option>
-                                <option value="Tazas decoradas con diseños especiales">Taza personalizada (Bs 20.00)</option>
-                                <option value="Lámparas de mesa con formas decorativas">Lámpara decorativa LED (Bs 38.00)</option>
-                                <option value="Bolas de cristal con nieve y música">Bola de cristal con nieve (Bs 45.00)</option>
+                                <option value="Tazas decoradas con diseños especiales">Taza personalizada (Bs 20.00)
+                                </option>
+                                <option value="Lámparas de mesa con formas decorativas">Lámpara decorativa LED (Bs
+                                    38.00)</option>
+                                <option value="Bolas de cristal con nieve y música">Bola de cristal con nieve (Bs 45.00)
+                                </option>
                             </optgroup>
                             <optgroup label="💄 Cosméticos y Belleza">
-                                <option value="Paletas de maquillaje y sombras de ojos">Paleta de maquillaje y sombras (Bs 22.00)</option>
-                                <option value="Perfumes y fragancias seleccionadas">Perfumes seleccionados (Bs 28.00)</option>
-                                <option value="Collares dúo magnéticos de pareja">Collares dúo magnéticos de pareja (Bs 35.50)</option>
-                                <option value="Brillos de colores y bálsamos hidratantes">Brillos de colores labiales (Bs 8.00)</option>
+                                <option value="Paletas de maquillaje y sombras de ojos">Paleta de maquillaje y sombras
+                                    (Bs 22.00)</option>
+                                <option value="Perfumes y fragancias seleccionadas">Perfumes seleccionados (Bs 28.00)
+                                </option>
+                                <option value="Collares dúo magnéticos de pareja">Collares dúo magnéticos de pareja (Bs
+                                    35.50)</option>
+                                <option value="Brillos de colores y bálsamos hidratantes">Brillos de colores labiales
+                                    (Bs 8.00)</option>
                             </optgroup>
                             <optgroup label="💻 Internet y Servicios Digitales">
-                                <option value="1 hora de Internet de alta velocidad">Reserva de PC / Internet (Bs 2.00/h)</option>
-                                <option value="PC Gamer 1 hora (videojuegos en red)">Reserva de PC Gamer (Bs 3.00/h)</option>
-                                <option value="Impresiones a color (carta y oficio)">Impresiones a color (Bs 2.00/h)</option>
+                                <option value="1 hora de Internet de alta velocidad">Reserva de PC / Internet (Bs
+                                    2.00/h)</option>
+                                <option value="PC Gamer 1 hora (videojuegos en red)">Reserva de PC Gamer (Bs 3.00/h)
+                                </option>
+                                <option value="Impresiones a color (carta y oficio)">Impresiones a color (Bs 2.00/h)
+                                </option>
                                 <option value="Fotocopias blanco y negro">Fotocopias blanco y negro (Bs 0.50/h)</option>
-                                <option value="Transcripciones de trabajos escolares">Transcripción de trabajos (Bs 4.00/h)</option>
-                                <option value="Anillados y plastificados de documentos">Anillado y plastificado (Bs 6.00)</option>
+                                <option value="Transcripciones de trabajos escolares">Transcripción de trabajos (Bs
+                                    4.00/h)</option>
+                                <option value="Anillados y plastificados de documentos">Anillado y plastificado (Bs
+                                    6.00)</option>
                             </optgroup>
                         </select>
                     </p>
@@ -266,6 +304,31 @@
                 </fieldset>
                 <button type="submit">Enviar pedido</button>
             </form>
+        </section>
+
+        <section id="preferencias">
+            <h2>Tus preferencias</h2>
+
+            <button type="button" id="tema-toggle" aria-pressed="false">Modo oscuro</button>
+
+            <label for="orden">Ordenar por</label>
+            <select id="orden">
+                <option value="nombre">Nombre</option>
+                <option value="precio">Precio</option>
+                <option value="stock">Stock</option>
+            </select>
+
+            <button type="button" id="olvidar">Olvidar mis preferencias</button>
+
+            <p id="estado-prefs" role="status" aria-live="polite"></p>
+        </section>
+        <!-- ── ZONA DEL DÍA 13: DÓNDE ESTÁ EL USUARIO ────── -->
+        <section id="ubicacion">
+            <h2>¿Estás cerca?</h2>
+            <p>Calculamos la distancia hasta el local. Tu ubicación no sale de tu navegador.</p>
+
+            <button type="button" id="ubicarme">Calcular mi distancia</button>
+            <p id="estado-ubicacion" role="status" aria-live="polite"></p>
         </section>
 
         <section id="remoto">
@@ -348,30 +411,40 @@
                 <p class="footer-subtitulo">¡Entérate de nuestras promociones y novedades!</p>
                 <div class="redes-sociales">
 
-                    <a href="https://wa.me/59174090398" target="_blank" rel="noopener" class="red-social red-whatsapp" id="link-whatsapp" aria-label="Escríbenos por WhatsApp">
+                    <a href="https://wa.me/59174090398" target="_blank" rel="noopener" class="red-social red-whatsapp"
+                        id="link-whatsapp" aria-label="Escríbenos por WhatsApp">
                         <svg class="red-icono" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.531 5.845L0 24l6.335-1.501A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.359-.213-3.754.889.94-3.658-.234-.376A9.779 9.779 0 012.182 12C2.182 6.574 6.574 2.182 12 2.182c5.426 0 9.818 4.392 9.818 9.818 0 5.426-4.392 9.818-9.818 9.818z"/>
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.531 5.845L0 24l6.335-1.501A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.359-.213-3.754.889.94-3.658-.234-.376A9.779 9.779 0 012.182 12C2.182 6.574 6.574 2.182 12 2.182c5.426 0 9.818 4.392 9.818 9.818 0 5.426-4.392 9.818-9.818 9.818z" />
                         </svg>
                         <span>WhatsApp</span>
                     </a>
 
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="red-social red-facebook" id="link-facebook" aria-label="Visítanos en Facebook">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="red-social red-facebook"
+                        id="link-facebook" aria-label="Visítanos en Facebook">
                         <svg class="red-icono" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                            <path
+                                d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
                         </svg>
                         <span>Facebook</span>
                     </a>
 
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="red-social red-instagram" id="link-instagram" aria-label="Síguenos en Instagram">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="red-social red-instagram"
+                        id="link-instagram" aria-label="Síguenos en Instagram">
                         <svg class="red-icono" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg>
                         <span>Instagram</span>
                     </a>
 
-                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="red-social red-tiktok" id="link-tiktok" aria-label="Síguenos en TikTok">
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="red-social red-tiktok"
+                        id="link-tiktok" aria-label="Síguenos en TikTok">
                         <svg class="red-icono" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/>
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z" />
                         </svg>
                         <span>TikTok</span>
                     </a>
@@ -409,6 +482,7 @@
     <script src="eventos.js"></script>
     <script src="jquery-panel.js"></script>
     <script src="remoto.js"></script>
+    <script src="preferencias.js"></script>
 
 </body>
 

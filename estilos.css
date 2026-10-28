@@ -5,44 +5,46 @@
   box-sizing: border-box;
 }
 
-/* ── 2. PALETA MODERNA Y DIGITAL (LIBRERÍA, INTERNET & CYBER STORE) ──────── */
+/* ── 2. PALETA CLARA Y MODERNA (LIBRERÍA, INTERNET & CYBER STORE) ──────── */
 :root {
-  --color-principal: #00e5ff;
-  /* Cyan neón tecno / digital */
-  --color-acento: #a855f7;
-  /* Violeta neón gamer */
-  --color-texto: #f1f5f9;
-  /* Texto claro de alta legibilidad */
-  --color-suave: #94a3b8;
-  /* Gris azulado para notas y subtítulos */
-  --color-fondo: #0a0e17;
-  /* Fondo oscuro cyber espacial */
-  --color-superficie: #131b2e;
-  /* Tarjetas y paneles */
-  --color-superficie-alt: #1a253d;
-  /* Elementos interactivos / hover */
-  --borde: #22324e;
-  /* Bordes tecnológicos sutiles */
-  --borde-glow: rgba(0, 229, 255, 0.4);
-  --sombra-glow: 0 0 16px rgba(0, 229, 255, 0.25);
-  --sombra-card: 0 8px 24px rgba(0, 0, 0, 0.45);
+  /* Tema CLARO (por defecto) */
+  --color-principal: #2563eb;
+  /* Azul cielo vibrante */
+  --color-acento: #7c3aed;
+  /* Violeta moderno */
+  --color-texto: #172033;
+  /* Texto oscuro sobre fondo claro */
+  --color-suave: #64748b;
+  /* Gris azulado suave */
+  --color-fondo: #f8fafc;
+  /* Fondo blanco azulado muy suave */
+  --color-superficie: #ffffff;
+  /* Tarjetas blancas puras */
+  --color-superficie-alt: #eef2ff;
+  /* Hover suave azulado */
+  --borde: #dbe2ea;
+  /* Bordes grises suaves */
+  --borde-glow: rgba(37, 99, 235, 0.24);
+  --sombra-glow: 0 0 18px rgba(37, 99, 235, 0.14);
+  --sombra-card: 0 8px 24px rgba(15, 23, 42, 0.07);
 
   --espacio: 1rem;
   --espacio-lg: 2rem;
-  --radio: 8px;
+  --radio: 10px;
 }
 
 /* ── 3. TIPOGRAFÍA Y CUERPO ─────────────────────────────────────────────── */
 body {
   margin: 0;
   padding: 0 var(--espacio);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   color: var(--color-texto);
   background: var(--color-fondo);
-  background-image: radial-gradient(circle at 15% 15%, rgba(0, 229, 255, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 85% 85%, rgba(168, 85, 247, 0.05) 0%, transparent 40%);
+  background-image:
+    radial-gradient(circle at 10% 0%, rgba(2, 132, 199, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 90% 100%, rgba(124, 58, 237, 0.06) 0%, transparent 45%);
   background-attachment: fixed;
 }
 
@@ -58,7 +60,7 @@ h1 {
   text-align: center;
   font-size: 3.2rem;
   margin-bottom: 0.25rem;
-  text-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
+  text-shadow: 0 2px 8px rgba(2, 132, 199, 0.2);
 }
 
 h2 {
@@ -70,7 +72,7 @@ h2 {
 
 h3 {
   font-size: 1.2rem;
-  color: #ffffff;
+  color: var(--color-texto);
 }
 
 p {
@@ -99,23 +101,54 @@ a:focus-visible {
 header {
   padding: var(--espacio-lg) var(--espacio);
   border-bottom: 2px solid var(--color-principal);
-  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.15);
+  box-shadow: var(--sombra-card);
   margin-bottom: var(--espacio-lg);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: var(--espacio);
-  background: rgba(19, 27, 46, 0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
   border-radius: var(--radio);
   margin-top: var(--espacio);
 }
 
 header p {
   margin: 0;
-  color: var(--color-texto);
+  color: var(--color-suave);
   font-size: 1.05rem;
+}
+
+/* ── BOTÓN TOGGLE TEMA EN HEADER ─────────────────────────────────────── */
+#header-tema-toggle {
+  background: var(--color-superficie);
+  color: var(--color-principal);
+  border: 1.5px solid var(--color-principal);
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  min-height: 36px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+#header-tema-toggle:hover {
+  background: var(--color-principal);
+  color: #fff;
+  box-shadow: var(--sombra-glow);
+  transform: translateY(-1px);
+}
+
+#header-tema-toggle[aria-pressed="true"] {
+  background: var(--color-acento);
+  border-color: var(--color-acento);
+  color: #fff;
 }
 
 nav ul {
@@ -130,25 +163,26 @@ nav ul {
 nav li a {
   display: inline-block;
   padding: 0.4rem 0.8rem;
-  background: var(--color-superficie);
+  background: var(--color-superficie-alt);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   color: var(--color-texto);
   font-size: 0.9rem;
+  font-weight: 500;
   transition: all 0.2s ease;
 }
 
 nav li a:hover {
-  background: var(--color-superficie-alt);
+  background: var(--color-principal);
   border-color: var(--color-principal);
-  color: var(--color-principal);
+  color: #fff;
   box-shadow: var(--sombra-glow);
 }
 
 #menu-toggle {
   display: none;
-  background: linear-gradient(135deg, var(--color-principal), #0284c7);
-  color: #0a0e17;
+  background: linear-gradient(135deg, var(--color-principal), var(--color-acento));
+  color: #fff;
   font-weight: 700;
   border: 0;
   border-radius: var(--radio);
@@ -168,7 +202,7 @@ article {
 }
 
 article:hover {
-  border-color: var(--borde-glow);
+  border-color: var(--color-principal);
   box-shadow: var(--sombra-glow), var(--sombra-card);
   transform: translateY(-2px);
 }
@@ -186,17 +220,57 @@ article p {
 }
 
 .bloque-categoria {
-  background: rgba(19, 27, 46, 0.65);
+  background: var(--color-superficie);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
-  padding: var(--espacio);
-  backdrop-filter: blur(8px);
+  overflow: hidden;
   box-shadow: var(--sombra-card);
-  transition: border-color 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .bloque-categoria:hover {
-  border-color: rgba(0, 229, 255, 0.4);
+  border-color: var(--color-principal);
+  box-shadow: var(--sombra-glow), var(--sombra-card);
+}
+
+/* ── CABECERA DE CATEGORÍA COMO BOTÓN PLEGABLE ───────────────────────── */
+.cabecera-categoria {
+  cursor: pointer;
+  user-select: none;
+}
+
+.cabecera-categoria:hover .titulo-categoria {
+  color: var(--color-principal);
+}
+
+.btn-toggle-cat {
+  background: none;
+  border: none;
+  color: var(--color-suave);
+  font-size: 1.1rem;
+  padding: 0;
+  min-height: unset;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.bloque-categoria[data-abierto="true"] .btn-toggle-cat {
+  transform: rotate(180deg);
+  color: var(--color-principal);
+}
+
+.grid-productos-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+  padding: 0 var(--espacio);
+}
+
+.bloque-categoria[data-abierto="true"] .grid-productos-wrapper {
+  max-height: 2000px;
+  padding: 0 var(--espacio) var(--espacio);
 }
 
 .cabecera-categoria {
@@ -205,9 +279,13 @@ article p {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.75rem;
-  padding-bottom: 0.85rem;
-  margin-bottom: var(--espacio);
-  border-bottom: 1px solid rgba(34, 50, 78, 0.8);
+  padding: 1rem var(--espacio);
+  border-bottom: 1px solid var(--borde);
+  transition: background 0.2s ease;
+}
+
+.cabecera-categoria:hover {
+  background: var(--color-superficie-alt);
 }
 
 .titulo-cat-wrap {
@@ -223,18 +301,19 @@ article p {
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: #0d1322;
+  background: var(--color-superficie-alt);
   border: 1px solid var(--borde);
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .titulo-categoria {
   margin: 0;
-  font-size: 1.25rem;
-  color: #ffffff;
+  font-size: 1.15rem;
+  color: var(--color-texto);
   font-weight: 700;
   letter-spacing: -0.01em;
+  transition: color 0.2s ease;
 }
 
 .desc-categoria {
@@ -244,10 +323,10 @@ article p {
 }
 
 .badge-conteo {
-  background: rgba(0, 229, 255, 0.1);
+  background: var(--color-superficie-alt);
   color: var(--color-principal);
-  border: 1px solid rgba(0, 229, 255, 0.3);
-  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--borde-glow);
+  padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.82rem;
   font-weight: 600;
@@ -261,7 +340,7 @@ article p {
 }
 
 .tarjeta {
-  background: #0d1322;
+  background: var(--color-superficie);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   overflow: hidden;
@@ -281,7 +360,7 @@ article p {
   position: relative;
   width: 100%;
   height: 150px;
-  background: #070a12;
+  background: var(--color-superficie-alt);
   overflow: hidden;
 }
 
@@ -337,7 +416,7 @@ article p {
 .tarjeta-titulo {
   margin: 0;
   font-size: 0.98rem;
-  color: #ffffff;
+  color: var(--color-texto);
   font-weight: 600;
   line-height: 1.35;
   min-height: 2.7em;
@@ -354,7 +433,6 @@ article p {
   font-weight: 700;
   color: var(--color-principal);
   margin: 0;
-  text-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
 }
 
 .unidad-medida {
@@ -389,8 +467,8 @@ article p {
 
 .btn-pedir:hover {
   background: var(--color-principal);
-  color: #0a0e17;
-  box-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+  color: #fff;
+  box-shadow: var(--sombra-glow);
   transform: translateY(-1px);
 }
 
@@ -408,8 +486,8 @@ article p {
 }
 
 .agotado {
-  background: #090d16;
-  opacity: 0.7;
+  background: #fafafa;
+  opacity: 0.75;
 }
 
 .agotado .precio {
@@ -433,7 +511,7 @@ article p {
 #buscador {
   flex: 1 1 14rem;
   max-width: 22rem;
-  background: #0d1322;
+  background: var(--color-fondo);
   color: var(--color-texto);
   border: 1px solid var(--borde);
   padding: 0.6rem 0.9rem;
@@ -455,7 +533,7 @@ article p {
 }
 
 #filtros button {
-  background: var(--color-superficie-alt);
+  background: var(--color-superficie);
   color: var(--color-suave);
   border: 1px solid var(--borde);
   padding: 0.4rem 0.9rem;
@@ -467,14 +545,14 @@ article p {
 }
 
 #filtros button:hover {
-  background: var(--color-superficie);
+  background: var(--color-superficie-alt);
   color: var(--color-principal);
   border-color: var(--color-principal);
 }
 
 #filtros button.activo {
   background: var(--color-principal);
-  color: #0a0e17;
+  color: #fff;
   border-color: var(--color-principal);
   box-shadow: var(--sombra-glow);
 }
@@ -509,6 +587,7 @@ table {
   border-radius: var(--radio);
   overflow: hidden;
   margin: var(--espacio) 0;
+  box-shadow: var(--sombra-card);
 }
 
 caption {
@@ -526,16 +605,16 @@ td {
 }
 
 th {
-  background: #18233c;
+  background: var(--color-superficie-alt);
   color: var(--color-principal);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   letter-spacing: 0.05em;
 }
 
 tr:hover td {
-  background: rgba(0, 229, 255, 0.04);
+  background: var(--color-superficie-alt);
 }
 
 /* ── 10. FORMULARIO DE PEDIDOS ─────────────────────────────────────────── */
@@ -546,6 +625,7 @@ fieldset {
   margin-bottom: var(--espacio);
   max-width: 34rem;
   background: var(--color-superficie);
+  box-shadow: var(--sombra-card);
 }
 
 legend {
@@ -568,7 +648,7 @@ textarea {
   font-family: inherit;
   padding: 0.6rem 0.8rem;
   width: 100%;
-  background: #0d1322;
+  background: var(--color-fondo);
   color: var(--color-texto);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
@@ -596,8 +676,8 @@ button {
   font-weight: 700;
   padding: 0.65rem 1.4rem;
   min-height: 44px;
-  background: linear-gradient(135deg, var(--color-principal), #0284c7);
-  color: #0a0e17;
+  background: linear-gradient(135deg, var(--color-principal), var(--color-acento));
+  color: #fff;
   border: 0;
   border-radius: var(--radio);
   cursor: pointer;
@@ -608,6 +688,7 @@ button[type="submit"]:hover,
 button:hover {
   box-shadow: var(--sombra-glow);
   transform: translateY(-1px);
+  filter: brightness(1.08);
 }
 
 /* ── 11. PANEL JQUERY, ACORDEÓN Y AVISOS ────────────────────────────────── */
@@ -628,7 +709,7 @@ button:hover {
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   margin-bottom: 0.6rem;
-  background: #0d1322;
+  background: var(--color-superficie-alt);
   overflow: hidden;
 }
 
@@ -645,12 +726,12 @@ button:hover {
   font-weight: 600;
   min-height: 46px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 #acordeon .titulo:hover {
-  background: rgba(0, 229, 255, 0.08);
-  color: #ffffff;
+  background: var(--color-superficie);
+  color: var(--color-texto);
 }
 
 #acordeon .titulo::after {
@@ -667,8 +748,8 @@ button:hover {
 
 #acordeon .cuerpo {
   padding: 0.5rem 1.1rem 1rem;
-  border-top: 1px solid rgba(34, 50, 78, 0.5);
-  background: #0d1322;
+  border-top: 1px solid var(--borde);
+  background: var(--color-superficie);
 }
 
 #acordeon .cuerpo p {
@@ -687,13 +768,13 @@ button:hover {
 }
 
 #avisos li {
-  background: #0d1322;
+  background: var(--color-superficie-alt);
   border-left: 4px solid var(--color-acento);
   padding: 0.75rem 1rem;
   margin-bottom: 0.5rem;
   border-radius: var(--radio);
   color: var(--color-texto);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--sombra-card);
 }
 
 .resaltado {
@@ -834,7 +915,7 @@ aside {
 footer {
   margin-top: var(--espacio-lg);
   border-top: 2px solid var(--borde);
-  background: #080c16;
+  background: #f8faff;
   color: var(--color-suave);
 }
 
@@ -1047,4 +1128,274 @@ footer address a:hover {
   footer {
     grid-area: pie;
   }
+}
+
+/* ── 15. TEMA OSCURO MODERNO ────────────────────────────────────────────── */
+.tema-oscuro {
+  --color-principal: #60a5fa;
+  /* Cyan brillante moderno */
+  --color-acento: #a78bfa;
+  /* Violeta suave */
+  --color-texto: #e5e7eb;
+  /* Texto claro sobre oscuro */
+  --color-suave: #a1a1aa;
+  /* Gris azulado */
+  --color-fondo: #111318;
+  /* Fondo muy oscuro azul/espacial */
+  --color-superficie: #1b1e25;
+  /* Tarjetas oscuras */
+  --color-superficie-alt: #252a34;
+  /* Hover/alt oscuro */
+  --borde: #343a46;
+  /* Bordes azul noche */
+  --borde-glow: rgba(96, 165, 250, 0.3);
+  --sombra-glow: 0 0 20px rgba(96, 165, 250, 0.16);
+  --sombra-card: 0 8px 28px rgba(0, 0, 0, 0.28);
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tema-oscuro body,
+.tema-oscuro {
+  background-image:
+    radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 90% 100%, rgba(192, 132, 252, 0.06) 0%, transparent 45%);
+}
+
+.tema-oscuro header {
+  background: rgba(17, 24, 39, 0.85);
+}
+
+.tema-oscuro footer {
+  background: #080c14;
+}
+
+.tema-oscuro .agotado {
+  background: #0d1117;
+}
+
+.tema-oscuro #filtros button {
+  background: var(--color-superficie-alt);
+}
+
+.tema-oscuro #filtros button.activo {
+  color: #0a0f1e;
+}
+
+.tema-oscuro #acordeon .item {
+  background: var(--color-superficie);
+}
+
+.tema-oscuro .error {
+  background: #2d1515;
+  color: #fca5a5;
+}
+
+/* ── PREFERENCIAS Y UBICACIÓN ───────────────────────────────────────────── */
+#preferencias,
+#ubicacion {
+  margin-top: var(--espacio-lg);
+}
+
+#preferencias button,
+#ubicacion button {
+  margin-right: 0.5rem;
+}
+
+#preferencias label {
+  display: inline;
+  margin-right: 0.4rem;
+}
+
+#preferencias select {
+  width: auto;
+  display: inline-block;
+}
+
+/* aria-pressed refleja el estado del botón toggle */
+#tema-toggle[aria-pressed="true"] {
+  background: var(--color-acento);
+  border-color: var(--color-acento);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}
+
+/* ── Ajustes modernos: preferencias rápidas y portada por categorías ── */
+#header-tema-toggle {
+  border: 1px solid var(--borde); border-radius: 999px;
+  background: var(--color-superficie); color: var(--color-texto);
+  padding: .65rem 1rem; font-weight: 650; cursor: pointer;
+  box-shadow: var(--sombra-card);
+}
+#header-tema-toggle:hover { border-color: var(--color-principal); transform: translateY(-1px); }
+#preferencias {
+  margin-top: var(--espacio-lg); padding: 1rem 1.2rem;
+  border: 1px solid var(--borde); border-radius: var(--radio);
+  background: var(--color-superficie); box-shadow: var(--sombra-card);
+}
+#preferencias h2 { margin-top: .2rem; }
+#lista-productos .categorias-portada {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 1rem;
+}
+#lista-productos .categoria-portada {
+  display: flex; flex-direction: column; align-items: flex-start; text-align: left;
+  gap: .55rem; min-height: 150px; padding: 1.25rem;
+  border: 1px solid var(--borde); border-radius: calc(var(--radio) + 4px);
+  background: var(--color-superficie); color: var(--color-texto);
+  box-shadow: var(--sombra-card); cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+#lista-productos .categoria-portada:hover {
+  transform: translateY(-3px); border-color: var(--color-principal); box-shadow: var(--sombra-glow);
+}
+.categoria-portada .portada-icono { font-size: 2rem; }
+.categoria-portada .portada-titulo { font-weight: 750; font-size: 1.05rem; }
+.categoria-portada .portada-desc { color: var(--color-suave); font-size: .92rem; }
+
+.acciones-cabecera { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; }
+.enlace-preferencias { display: inline-flex; align-items: center; padding: .55rem .8rem; border-radius: 999px; border: 1px solid var(--borde); background: var(--color-superficie); }
+@media (max-width: 640px) {
+  .acciones-cabecera { width: 100%; }
+  #header-tema-toggle { flex: 1; }
+}
+
+/* ── 16. AJUSTE DE LEGIBILIDAD Y PALETAS MÁS VIVAS ─────────────────────── */
+:root {
+  /* Claro: tonos cálidos y azul-lavanda, sin blanco deslumbrante */
+  --color-principal: #1747b8;
+  --color-acento: #7138c8;
+  --color-texto: #172554;
+  --color-suave: #465a7a;
+  --color-fondo: #edf2ff;
+  --color-superficie: #f8f9ff;
+  --color-superficie-alt: #e0e9ff;
+  --borde: #c4d2f0;
+  --borde-glow: rgba(37, 99, 235, 0.3);
+  --sombra-glow: 0 0 20px rgba(37, 99, 235, 0.18);
+  --sombra-card: 0 8px 24px rgba(34, 58, 110, 0.12);
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  background-image:
+    radial-gradient(circle at 8% 0%, rgba(59, 130, 246, 0.16) 0%, transparent 38%),
+    radial-gradient(circle at 95% 18%, rgba(168, 85, 247, 0.12) 0%, transparent 34%),
+    radial-gradient(circle at 50% 100%, rgba(20, 184, 166, 0.10) 0%, transparent 42%);
+}
+
+p,
+li,
+label,
+input,
+select,
+textarea,
+button {
+  font-size: 1rem;
+}
+
+/* Los textos secundarios también deben conservar contraste y tamaño cómodo. */
+.descripcion,
+.detalle,
+.producto-descripcion,
+.categoria-descripcion,
+small,
+.texto-suave {
+  color: var(--color-suave);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+/* Claro: tarjetas con matices de color en vez de superficies totalmente blancas. */
+header,
+.card,
+.producto,
+#preferencias,
+#ubicacion,
+#resultados,
+#catalogo,
+#categorias,
+.categoria-card {
+  border-color: var(--borde);
+}
+
+/* Oscuro: azul noche luminoso con acentos eléctricos y superficies diferenciadas. */
+.tema-oscuro {
+  --color-principal: #75d5ff;
+  --color-acento: #d0a0ff;
+  --color-texto: #f3f6ff;
+  --color-suave: #c0cce5;
+  --color-fondo: #10162b;
+  --color-superficie: #1a2542;
+  --color-superficie-alt: #26365c;
+  --borde: #435783;
+  --borde-glow: rgba(117, 213, 255, 0.42);
+  --sombra-glow: 0 0 24px rgba(69, 190, 255, 0.22);
+  --sombra-card: 0 10px 30px rgba(0, 0, 0, 0.34);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  background-image:
+    radial-gradient(circle at 8% 0%, rgba(14, 165, 233, 0.22) 0%, transparent 38%),
+    radial-gradient(circle at 95% 12%, rgba(168, 85, 247, 0.20) 0%, transparent 34%),
+    radial-gradient(circle at 50% 100%, rgba(16, 185, 129, 0.12) 0%, transparent 42%);
+}
+
+.tema-oscuro header {
+  background: linear-gradient(115deg, rgba(24, 39, 72, 0.97), rgba(48, 34, 83, 0.95));
+  border-color: #526b9c;
+}
+
+.tema-oscuro footer {
+  background: linear-gradient(120deg, #111a32, #251a43);
+  color: #e5eaff;
+}
+
+.tema-oscuro #filtros button,
+.tema-oscuro .categoria-card,
+.tema-oscuro #preferencias,
+.tema-oscuro #ubicacion {
+  background: linear-gradient(145deg, var(--color-superficie), #202c4d);
+  color: var(--color-texto);
+  border-color: var(--borde);
+}
+
+.tema-oscuro #filtros button.activo {
+  background: linear-gradient(120deg, #56c8f5, #b68aff);
+  border-color: transparent;
+  color: #10162b;
+  font-weight: 750;
+}
+
+.tema-oscuro h1,
+.tema-oscuro h2,
+.tema-oscuro h3 {
+  color: var(--color-principal);
+  text-shadow: 0 0 18px rgba(117, 213, 255, 0.12);
+}
+
+.tema-oscuro a {
+  color: #8de1ff;
+}
+
+.tema-oscuro input,
+.tema-oscuro select,
+.tema-oscuro textarea {
+  background: #111a32;
+  color: #f3f6ff;
+  border-color: #536b9b;
+}
+
+.tema-oscuro .agotado {
+  background: #171d31;
+  color: #c5cee2;
 }

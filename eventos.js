@@ -4,21 +4,32 @@ const filtros = document.querySelector("#filtros");
 const resultado = document.querySelector("#resultado");
 const formulario = document.querySelector("form");
 
-let categoriaActiva = "todos";
+let categoriaActiva = "categorias";
 let textoBuscado = "";
 
 // ── 2. UNA SOLA FUNCIÓN QUE DECIDE QUÉ MOSTRAR ──────────────────────────
 function actualizar() {
   if (typeof productos === "undefined" || typeof render !== "function") return;
 
+  if (categoriaActiva === "categorias" && !textoBuscado.trim()) {
+    if (typeof renderCategorias === "function") renderCategorias();
+    if (resultado) resultado.textContent = "Elige una categoría para explorar sus productos.";
+    return;
+  }
+
   const visibles = productos
-    .filter(p => categoriaActiva === "todos" || p.categoria === categoriaActiva)
+    .filter(p => categoriaActiva === "todos" || categoriaActiva === "categorias" || p.categoria === categoriaActiva)
     .filter(p => p.nombre.toLowerCase().includes(textoBuscado.toLowerCase()));
 
+  const orden = (typeof preferencias !== "undefined" && preferencias.orden) || "nombre";
+  visibles.sort((a, b) => {
+    if (orden === "precio") return a.precio - b.precio;
+    if (orden === "stock") return b.stock - a.stock;
+    return a.nombre.localeCompare(b.nombre, "es");
+  });
+
   render(visibles);
-  if (resultado) {
-    resultado.textContent = `${visibles.length} de ${productos.length} productos`;
-  }
+  if (resultado) resultado.textContent = `${visibles.length} de ${productos.length} productos`;
 }
 
 actualizar();
@@ -37,12 +48,25 @@ if (filtros) {
     const boton = event.target.closest("button");
     if (!boton) return;
 
-    categoriaActiva = boton.dataset.categoria;
+    categoriaActiva = boton.dataset.categoria === "todos" ? "categorias" : boton.dataset.categoria;
 
     filtros.querySelectorAll("button").forEach(b => b.classList.remove("activo"));
     boton.classList.add("activo");
 
+    if (buscador && categoriaActiva === "categorias") buscador.value = "";
     actualizar();
+  });
+}
+
+// Elegir una tarjeta de categoría equivale a pulsar su filtro superior.
+const listaCategorias = document.querySelector("#lista-productos");
+if (listaCategorias && filtros) {
+  listaCategorias.addEventListener("click", (event) => {
+    const tarjeta = event.target.closest(".categoria-portada");
+    if (!tarjeta) return;
+    const botonFiltro = filtros.querySelector(`[data-categoria="${tarjeta.dataset.categoria}"]`);
+    if (botonFiltro) botonFiltro.click();
+    document.querySelector("#Productos")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
 
