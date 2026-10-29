@@ -49,8 +49,11 @@ function aplicarPreferencias() {
 
   const estado = document.querySelector("#estado-prefs");
   if (estado) estado.textContent = `Tema ${preferencias.tema}, ordenado por ${preferencias.orden}.`;
+<<<<<<< HEAD
 
   if (typeof dibujarGrafico === "function") dibujarGrafico();
+=======
+>>>>>>> 1e09e9ed809604cd531be51391b2dba9c0db9d8e
 }
 
 aplicarPreferencias();

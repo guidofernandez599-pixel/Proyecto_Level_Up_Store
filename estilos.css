@@ -1228,6 +1228,7 @@ body {
 
 /* ── Ajustes modernos: preferencias rápidas y portada por categorías ── */
 #header-tema-toggle {
+<<<<<<< HEAD
   border: 1px solid var(--borde);
   border-radius: 999px;
   background: var(--color-superficie);
@@ -1323,6 +1324,43 @@ body {
   #header-tema-toggle {
     flex: 1;
   }
+=======
+  border: 1px solid var(--borde); border-radius: 999px;
+  background: var(--color-superficie); color: var(--color-texto);
+  padding: .65rem 1rem; font-weight: 650; cursor: pointer;
+  box-shadow: var(--sombra-card);
+}
+#header-tema-toggle:hover { border-color: var(--color-principal); transform: translateY(-1px); }
+#preferencias {
+  margin-top: var(--espacio-lg); padding: 1rem 1.2rem;
+  border: 1px solid var(--borde); border-radius: var(--radio);
+  background: var(--color-superficie); box-shadow: var(--sombra-card);
+}
+#preferencias h2 { margin-top: .2rem; }
+#lista-productos .categorias-portada {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 1rem;
+}
+#lista-productos .categoria-portada {
+  display: flex; flex-direction: column; align-items: flex-start; text-align: left;
+  gap: .55rem; min-height: 150px; padding: 1.25rem;
+  border: 1px solid var(--borde); border-radius: calc(var(--radio) + 4px);
+  background: var(--color-superficie); color: var(--color-texto);
+  box-shadow: var(--sombra-card); cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+#lista-productos .categoria-portada:hover {
+  transform: translateY(-3px); border-color: var(--color-principal); box-shadow: var(--sombra-glow);
+}
+.categoria-portada .portada-icono { font-size: 2rem; }
+.categoria-portada .portada-titulo { font-weight: 750; font-size: 1.05rem; }
+.categoria-portada .portada-desc { color: var(--color-suave); font-size: .92rem; }
+
+.acciones-cabecera { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; }
+.enlace-preferencias { display: inline-flex; align-items: center; padding: .55rem .8rem; border-radius: 999px; border: 1px solid var(--borde); background: var(--color-superficie); }
+@media (max-width: 640px) {
+  .acciones-cabecera { width: 100%; }
+  #header-tema-toggle { flex: 1; }
+>>>>>>> 1e09e9ed809604cd531be51391b2dba9c0db9d8e
 }
 
 /* ── 16. AJUSTE DE LEGIBILIDAD Y PALETAS MÁS VIVAS ─────────────────────── */
@@ -1459,6 +1497,7 @@ header,
   background: #171d31;
   color: #c5cee2;
 }
+<<<<<<< HEAD
 
 #tablero-zona {
   margin-top: var(--espacio-lg);
@@ -1798,3 +1837,5 @@ header,
   border: 1px solid var(--borde);
   border-radius: var(--radio);
 }
+=======
+>>>>>>> 1e09e9ed809604cd531be51391b2dba9c0db9d8e

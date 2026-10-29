@@ -29,6 +29,7 @@ lo mas dificil de hacer fue mostrar las secciones de prodcutos de forma ordenada
 - Coordenadas de referencia del local actualizadas a Colquencha: latitud -16.9388, longitud -68.2435.
 - Retirado el mensaje promocional de disponibilidad de bolígrafos de la cabecera.
 - Se conservaron los archivos de catálogo remoto `remoto.js` y `jquery-3.7.1.min.js` sin modificar su lógica.
+<<<<<<< HEAD
 
 ## LABORATORIO 2 Y 3
 
@@ -36,3 +37,5 @@ lo mas dificil de hacer fue mostrar las secciones de prodcutos de forma ordenada
 
 **Laboratorio 3:** Se añadieron funcionalidades avanzadas del navegador e integración asíncrona, incluyendo la carga remota del catálogo desde `datos.json` mediante `fetch` (`async/await`) y `$.getJSON` con control de estados de carga y error (`remoto.js`), así como el guardado de preferencias de usuario (modo claro/oscuro y criterio de ordenamiento) en `localStorage` junto con el cálculo de distancia hacia la tienda en Colquencha usando la API de Geolocalización (`preferencias.js`). Finalmente, se incorporó una bandeja interactiva de compras con soporte Drag & Drop y táctil (`tablero.js`), donde el cliente puede arrastrar productos desde una barra deslizable con fotos hacia su carrito para armar pedidos de varios artículos, visualizando el resumen de unidades y montos en tiempo real mediante un gráfico en `Canvas`.
 
+=======
+>>>>>>> 1e09e9ed809604cd531be51391b2dba9c0db9d8e
