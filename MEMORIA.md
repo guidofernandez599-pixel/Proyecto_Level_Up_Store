@@ -4,8 +4,8 @@
 **Estudiante / Desarrollador:** Guido Fernandez Ajno  
 **Clientes:** Bragin Quispe Mamani y Lucy Gladys Fernandez Ajno  
 **Ubicación:** Colquencha, La Paz - Bolivia  
-**Fecha de Actualización:** 26 de Octubre de 2026 (Cierre de jornada)  
-**Versión:** 2.1 (Integración Dinámica, Rediseño Digital y Recursos Multimedia)  
+**Fecha de Actualización:** 27 de Octubre de 2026 (Cierre de jornada)  
+**Versión:** 2.2 (Carga Remota con Fetch/jQuery, Redes Sociales y Reorganización de Imágenes)  
 
 ---
 
@@ -116,53 +116,107 @@ Todas las imágenes se asociaron en el arreglo de datos `datos.js` y se integrar
 
 ---
 
-## 4. Estado Actual de los Archivos del Proyecto
+## 4. Bitácora de Trabajo Realizado Hoy (27 de Octubre de 2026)
+
+Durante la jornada de hoy se completaron todas las prioridades planificadas en la sesión anterior y se añadieron mejoras adicionales de calidad:
+
+### 4.1 Creación del Módulo de Carga Remota ([`remoto.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/remoto.js))
+* **Nuevo archivo `remoto.js`** implementado desde cero, incluyendo:
+  * **Gestión de los tres estados de petición**: `cargando`, `ok` y `error` mediante la función `mostrarEstado(texto, tipo)` que actualiza visualmente el elemento `#estado`.
+  * **Carga asíncrona con Fetch nativo** (`async/await`): La función `cargarConFetch(url)` solicita `datos.json` al servidor, gestiona errores HTTP y renderiza las tarjetas del catálogo remoto en `#lista-remota`.
+  * **Carga asíncrona con jQuery** (`$.getJSON`): Implementación alternativa con `.done()`, `.fail()` y `.always()` conectada al botón `#cargar-jquery`.
+  * **Botón de error intencional** (`#cargar-roto`): Solicita `no-existe.json` para demostrar y practicar el manejo del estado de error (HTTP 404).
+  * **Función `pintarRemoto(productos)`**: Renderiza cada artículo del catálogo remoto con imagen, precio, categoría, stock y proveedor. Gestiona rutas relativas de imágenes con prefijo automático `imagenes/`.
+  * **Comentarios didácticos** sobre el ciclo de vida de las Promesas (Pending / Fulfilled / Rejected) y cómo inspeccionar peticiones en la pestaña Network de las DevTools.
+
+### 4.2 Creación del Catálogo Remoto ([`datos.json`](file:///c:/Users/Personal/Documents/proyecto_tienda/datos.json))
+* **Nuevo archivo `datos.json`** que replica el inventario oficial de Level Up Store en formato JSON estándar, incluyendo:
+  * Metadatos del negocio: nombre, teléfono, ubicación y descripción.
+  * 37 productos y servicios organizados en las 4 categorías oficiales: *Escolares*, *Regalos*, *Cosméticos* e *Internet/Servicios*.
+  * Campos por artículo: `nombre`, `precio`, `unidad`, `categoria`, `disponible`, `stock`, `imagen` y `proveedor`.
+
+### 4.3 Reorganización de la Carpeta de Imágenes
+* **Todas las imágenes del proyecto se movieron a la subcarpeta `imagenes/`** para un mejor orden estructural:
+  * `imagenes/Captura-LevelUp.png`
+  * `imagenes/collares_portafotos.jpg`
+  * `imagenes/cosmeticos_perfumes.jpg`
+  * `imagenes/internet_gaming.jpg`
+  * `imagenes/materiales.jfif`
+  * `imagenes/peluche_regalo.jpg`
+  * `imagenes/peluches_stitch_capibara.jpg` *(nueva, agregada hoy)*
+  * `imagenes/utiles_escolares.jpg`
+* Todas las referencias a imágenes en `index.html`, `render.js` y `remoto.js` fueron actualizadas con el prefijo `imagenes/`.
+
+### 4.4 Sección de Redes Sociales en el Footer ([`index.html`](file:///c:/Users/Personal/Documents/proyecto_tienda/index.html))
+* **Rediseño completo del `<footer id="Contactos">`** con una estructura en grid de 3 columnas:
+  1. **Datos de contacto**: dirección, teléfono con enlace `tel:`, y horarios.
+  2. **Redes Sociales** (nueva sección): botones interactivos con SVG inline para **WhatsApp**, **Facebook**, **Instagram** y **TikTok**, con atributos `aria-label` para accesibilidad y `rel="noopener"` por seguridad.
+  3. **Servicios rápidos**: lista resumida de los 6 servicios principales de la tienda.
+* Se añadió el enlace directo a WhatsApp `https://wa.me/59174090398` en el botón de la red social.
+* Nota informativa para personalizar los enlaces reales de Facebook, Instagram y TikTok cuando se disponga de las URLs definitivas.
+
+### 4.5 Nuevos Productos en el Catálogo ([`datos.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/datos.js))
+* **Incorporación de nuevos artículos** al inventario principal `datos.js`, ampliando la base de datos con productos adicionales identificados con los clientes.
+* El catálogo actualizado en `datos.js` ahora supera los **55 artículos** organizados por las 4 categorías.
+
+### 4.6 Actualización de Estilos ([`estilos.css`](file:///c:/Users/Personal/Documents/proyecto_tienda/estilos.css))
+* Incorporación de estilos para el nuevo footer con grid de 3 columnas (`.footer-grid`, `.footer-bloque`).
+* Estilos para los botones de redes sociales (`.redes-sociales`, `.red-social`) con colores de marca específicos: verde WhatsApp, azul Facebook, gradiente Instagram y negro TikTok.
+* Estilos para la sección de carga remota (`#estado`, `#lista-remota`), incluyendo las clases de estado `.cargando`, `.ok` y `.error` con indicadores visuales diferenciados.
+
+---
+
+## 5. Estado Actual de los Archivos del Proyecto
 
 | Archivo | Estado | Responsabilidad Principal |
 | :--- | :---: | :--- |
-| [`index.html`](file:///c:/Users/Personal/Documents/proyecto_tienda/index.html) | **100% Operativo** | Estructura semántica, controles de filtrado por 4 categorías, catálogo, tabla de precios y formulario. |
-| [`estilos.css`](file:///c:/Users/Personal/Documents/proyecto_tienda/estilos.css) | **100% Operativo** | Diseño oscuro tecnológico, bloques por categoría, tarjetas interactivas, badges y botones de pedido. |
-| [`datos.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/datos.js) | **100% Operativo** | Base de datos completa con más de 55 artículos organizados por categoría, stock y precios reales. |
+| [`index.html`](file:///c:/Users/Personal/Documents/proyecto_tienda/index.html) | **100% Operativo** | Estructura semántica, controles de filtrado por 4 categorías, catálogo, tabla de precios, formulario, sección de carga remota y footer con redes sociales. |
+| [`estilos.css`](file:///c:/Users/Personal/Documents/proyecto_tienda/estilos.css) | **100% Operativo** | Diseño oscuro tecnológico, bloques por categoría, tarjetas interactivas, badges, botones de pedido, estados de carga y footer con redes. |
+| [`datos.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/datos.js) | **100% Operativo** | Base de datos principal con más de 55 artículos organizados por categoría, stock y precios reales. |
+| [`datos.json`](file:///c:/Users/Personal/Documents/proyecto_tienda/datos.json) | **100% Operativo** | Catálogo de 37 artículos en formato JSON para pruebas de carga remota con Fetch y jQuery. |
 | [`render.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/render.js) | **100% Operativo** | Renderizado del catálogo agrupado por categorías con cabeceras y selección de pedidos. |
 | [`eventos.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/eventos.js) | **100% Operativo** | Búsqueda en vivo, filtrado de 4 categorías y confirmación de pedidos vía WhatsApp. |
-| [`remoto.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/remoto.js) | **100% Operativo** | Carga asíncrona (Fetch y jQuery), gestión de 3 estados y pintado de tarjetas. |
-| [`datos.json`](file:///c:/Users/Personal/Documents/proyecto_tienda/datos.json) | **100% Operativo** | Catálogo estructurado en JSON de Level Up Store (Librería, Internet y Regalos). |
+| [`remoto.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/remoto.js) | **100% Operativo** | Carga asíncrona con Fetch y jQuery (`$.getJSON`), gestión de 3 estados y pintado de tarjetas remotas. |
 | [`jquery-panel.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/jquery-panel.js) | **100% Operativo** | Acordeón de FAQ, menú desplegable para móviles y avisos escalonados. |
-| [`jquery-3.7.1.min.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/jquery-3.7.1.min.js) | **100% Operativo** | Librería jQuery local para ejecución sin necesidad de conexión externa. |
+| [`jquery-3.7.1.min.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/jquery-3.7.1.min.js) | **100% Operativo** | Librería jQuery local para ejecución sin conexión externa. |
 | [`app.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/app.js) | **100% Operativo** | Prácticas iniciales de variables y manipulación del DOM sin errores. |
 | [`funciones.js`](file:///c:/Users/Personal/Documents/proyecto_tienda/funciones.js) | **100% Operativo** | Funciones de cálculo, flecha, coerción y cierres léxicos (closures). |
-| [`MEMORIA.md`](file:///c:/Users/Personal/Documents/proyecto_tienda/MEMORIA.md) | **Actualizado** | Memoria técnica completa y bitácora de seguimiento. |
+| [`imagenes/`](file:///c:/Users/Personal/Documents/proyecto_tienda/imagenes/) | **Reorganizado** | Carpeta unificada con todas las imágenes del proyecto (8 archivos). |
+| [`MEMORIA.md`](file:///c:/Users/Personal/Documents/proyecto_tienda/MEMORIA.md) | **Actualizado** | Memoria técnica completa y bitácora de seguimiento al día. |
 
 ---
 
-## 5. Plan de Trabajo para la Próxima Sesión (Mañana)
+## 6. Plan de Trabajo para la Próxima Sesión
 
-Para retomar el proyecto el día de mañana, se establecen las siguientes prioridades de desarrollo:
+Para retomar el proyecto el día siguiente, se establecen las siguientes prioridades de desarrollo:
 
-### Prioridad 1: Integración con WhatsApp para Confirmación de Pedidos
-* Al enviar el formulario de pedidos, generar un enlace directo a la API de WhatsApp (`https://wa.me/59174090398?text=...`) con el mensaje preformateado (nombre del cliente, producto elegido, cantidad y fecha de entrega).
-* Permitir que el cliente confirme su compra de manera inmediata desde su teléfono.
-
-### Prioridad 2: Carrito de Compras Básico con `localStorage`
-* Añadir un botón *"Agregar al pedido"* en cada tarjeta del catálogo.
+### Prioridad 1: Carrito de Compras Básico con `localStorage`
+* Añadir un botón *"Agregar al carrito"* en cada tarjeta del catálogo local (además del ya existente *"Pedir este artículo"*).
 * Almacenar los productos seleccionados en `localStorage` para que la lista no se pierda al recargar la página.
-* Mostrar un resumen del total a pagar en Bs antes de enviar el formulario.
+* Mostrar un icono de carrito flotante con contador de artículos en el header.
+* Mostrar un resumen del total acumulado en Bs antes de enviar el formulario.
+
+### Prioridad 2: Personalización de las Redes Sociales
+* Reemplazar los enlaces genéricos de Facebook, Instagram y TikTok con las URLs reales de la tienda una vez que los clientes las proporcionen.
+* Verificar que el botón de WhatsApp dirige correctamente al número `+591 740 903 98`.
 
 ### Prioridad 3: Verificación de Rendimiento y Pruebas en Pantallas Móviles
-* Inspeccionar el comportamiento en resolución móvil (375px y 412px) verificando que el botón del menú `#menu-toggle` y la galería de regalos se visualicen de forma óptima.
-* Comprobar la carga de imágenes para garantizar velocidad y fluidez.
+* Inspeccionar el comportamiento en resolución móvil (375px y 412px) verificando que el botón del menú `#menu-toggle`, la galería de regalos y el nuevo footer con redes sociales se visualicen de forma óptima.
+* Comprobar la carga de imágenes desde `imagenes/` para garantizar velocidad y fluidez.
 
 ### Prioridad 4: Preparación para Despliegue en Línea
 * Crear o actualizar el repositorio en GitHub y habilitar **GitHub Pages** para que el sitio cuente con su URL pública accesible desde cualquier lugar.
+* Verificar que `datos.json` se sirva correctamente como recurso estático en el servidor de GitHub Pages (Content-Type: application/json).
 
 ---
 
-## 6. Instrucciones para Continuar Mañana
+## 7. Instrucciones para Continuar
 
 1. **Abrir el proyecto:** Abrir la carpeta `c:\Users\Personal\Documents\proyecto_tienda` en el editor.
-2. **Visualizar la página:** Abrir el archivo `index.html` en el navegador (haciendo doble clic o utilizando la extensión *Live Server*).
-3. **Comprobar la consola:** Presionar `F12` en el navegador para verificar que la pestaña *Console* no reporte ningún error rojo.
-4. **Comenzar con la Prioridad 1:** Implementar el enlace a WhatsApp en la función de submit de `eventos.js`.
+2. **Visualizar la página:** Abrir el archivo `index.html` con la extensión *Live Server* (necesario para que `fetch` funcione correctamente con `datos.json`).
+3. **Comprobar la consola:** Presionar `F12` → pestaña *Console* → verificar que no aparezcan errores rojos.
+4. **Probar la carga remota:** En la sección *Catálogo Remoto*, presionar los botones *"Cargar con Fetch"* y *"Cargar con jQuery"* y observar los tres estados en la pestaña *Network*.
+5. **Comenzar con la Prioridad 1:** Implementar el carrito básico con `localStorage` en `eventos.js` y `render.js`.
 
 ---
-*Fin del registro de actividades del 26 de Octubre de 2026. Proyecto listo para continuar mañana.*
+*Fin del registro de actividades del 27 de Octubre de 2026. Proyecto listo para continuar mañana.*

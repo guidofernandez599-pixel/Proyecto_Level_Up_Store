@@ -104,6 +104,30 @@ function crearTarjetaProducto(producto) {
 // Alias para compatibilidad con código anterior o de clase
 const crearTarjetaPlato = crearTarjetaProducto;
 
+// Portada inicial: mostrar solo las categorías, sin saturar la página.
+function renderCategorias() {
+  if (!contenedor) return;
+  contenedor.innerHTML = "";
+  const portada = document.createElement("div");
+  portada.className = "categorias-portada";
+  Object.entries(INFO_CATEGORIAS).forEach(([clave, info]) => {
+    const cantidad = typeof productos !== "undefined"
+      ? productos.filter(p => p.categoria === clave).length : 0;
+    const boton = document.createElement("button");
+    boton.type = "button";
+    boton.className = "categoria-portada";
+    boton.dataset.categoria = clave;
+    boton.innerHTML = `
+      <span class="portada-icono" aria-hidden="true">${info.icono}</span>
+      <span class="portada-titulo">${info.titulo}</span>
+      <span class="portada-desc">${info.descripcion}</span>
+      <span class="badge-conteo">${cantidad} ${cantidad === 1 ? "artículo" : "artículos"} · Ver catálogo →</span>
+    `;
+    portada.append(boton);
+  });
+  contenedor.append(portada);
+}
+
 // ── 5. FUNCIÓN DE RENDERIZADO CATEGORIZADO EN EL DOM ───────────────────
 function render(lista) {
   if (!contenedor) return;
@@ -171,7 +195,7 @@ const renderMenu = render;
 
 // ── 6. EJECUTAR RENDERIZADO INICIAL ─────────────────────────────────────
 if (typeof productos !== "undefined") {
-  render(productos);
+  renderCategorias();
 }
 
 // ── 7. RECORRIDO DEL DOM ────────────────────────────────────────────────

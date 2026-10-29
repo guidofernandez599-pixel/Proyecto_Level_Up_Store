@@ -66,7 +66,7 @@ console.log("1.5" === BoligrafosRojosSabonis);
 
 const subtitulo = document.querySelector("header p");
 if (subtitulo) {
-  subtitulo.textContent = `Libreria, internet y tienda de regalos en Colquencha - ¡Disponibles ${BoligrafosRojosSabonis} boligrafos rojos y más útiles!`;
+  subtitulo.textContent = "Librería, internet y tienda de regalos en Colquencha.";
 }
 
 // ── LA PREGUNTA DEL DÍA ─────────────────────────────────────────────────
